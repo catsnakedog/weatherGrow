@@ -5,6 +5,7 @@ using UnityEngine;
 public class WeatherMove : MonoBehaviour
 {
     public float speed;
+    public List<int> element;
 
     // Update is called once per frame
     void Update()
