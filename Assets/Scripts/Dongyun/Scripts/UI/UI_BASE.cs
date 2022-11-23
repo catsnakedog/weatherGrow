@@ -18,30 +18,30 @@ public class UI_BASE : MonoBehaviour
         
     }
    
-    public void ButtonSetting()
+    public void ButtonSetting() // 설정팝업창 생성
     {   
          if(SettingCount == 0) return ; 
           Instantiate(Setting) ;
           SettingCount =0;
     }
 
-    public void ButtonClose()
+    public void ButtonClose()  // 설정 팝업 닫기
     {
 
           Destroy(gameObject) ; 
           SettingCount = 1 ;
     }
       
-    public void MenuSceneChange()
+    public void MenuSceneChange() // 메뉴로 돌아가는 함수
     {
         SceneManager.LoadScene("StartScene") ; 
     }
-    public void GameSceneChange()
+    public void GameSceneChange()  // 인게임으로 돌아가는함수
     {
         SceneManager.LoadScene(  "InGame"    ) ;
     }
 
-    public void GameQuit()
+    public void GameQuit()  // 게임종료 함수
     {
         Application.Quit() ; 
     }
