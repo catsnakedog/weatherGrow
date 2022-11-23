@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-
+/*
 public class InGameManager : MonoBehaviour
 {
     SpawnManager SpawnManager;
@@ -43,3 +43,4 @@ public class InGameManager : MonoBehaviour
         }
     }
 }
+*/
