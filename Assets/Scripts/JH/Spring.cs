@@ -25,4 +25,11 @@ public class Spring : WeatherAndBoss
             weather[2] = 4;
         }
     }
+
+    public override void Kill()
+    {
+
+        Destroy(gameObject);
+        Destroy(this);
+    }
 }

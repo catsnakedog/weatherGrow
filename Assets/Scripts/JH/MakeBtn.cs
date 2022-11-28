@@ -11,7 +11,7 @@ public class MakeBtn : MonoBehaviour
     public Button btn3;
     public Button btn4;
 
-    public WeatherAndBoss n;
+    private WeatherAndBoss n;
 
     //각 버튼에 해당하는 날씨 1234 1234 1245 1634 해/비/구름/바람/안개/눈
     private int[] btnFunc1 = new int[4];
@@ -57,7 +57,8 @@ public class MakeBtn : MonoBehaviour
         {
             n.weather.Remove(1);
         }
-        else GameManager.instance.hp--;
+        else if (!n.weather.Contains(1)) GameManager.instance.hp--;
+        else if (n.weather == null) return;
     }
     private int CheckAns2()
     {

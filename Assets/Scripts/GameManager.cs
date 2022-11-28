@@ -38,7 +38,9 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
+    #region 인게임 2
     public Queue<GameObject> q = new Queue<GameObject>();
+
 
     public Action<Button> clickedBtn;
 
@@ -46,5 +48,7 @@ public class GameManager : MonoBehaviour
     {
         clickedBtn?.Invoke(button);
     }
+
+    #endregion
 }
 

@@ -38,6 +38,7 @@ public class WeatherAndBoss : MonoBehaviour
         if (transform.position.x < -leftLimit)
         {
             Destroy(gameObject);
+            GameManager.instance.q.Dequeue();
         }
     }
     protected virtual void Init()
