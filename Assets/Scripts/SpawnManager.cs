@@ -23,7 +23,7 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //UpdateController();
+        UpdateController();
     }
 
     public void SpawnRandomWeather()
@@ -51,12 +51,15 @@ public class SpawnManager : MonoBehaviour
 
     void UpdateController() //que의 맨앞에 있는 오브젝트를 찾아서 list가 충족되거나 바운더리 밖으로 나갔을때 파괴를 시키도록
     {
-        findObj = GameManager.instance.q.Peek();
-        _findObj = findObj.GetComponent<WeatherAndBoss>();
-        if (_findObj.weather == null || findObj.transform.position.x<-5)
+        if (!GameManager.instance.q.Peek())
         {
-            Destroy(findObj);
-            GameManager.instance.q.Dequeue();
+            findObj = GameManager.instance.q.Peek();
+            _findObj = findObj.GetComponent<WeatherAndBoss>();
+            if (_findObj.weather.Count ==  0 || findObj.transform.position.x < -5)
+            {
+                GameManager.instance.q.Dequeue();
+                Destroy(findObj);
+            }
         }
     }
 }

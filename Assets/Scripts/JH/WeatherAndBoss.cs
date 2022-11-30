@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeatherAndBoss : MonoBehaviour
 {
     private float leftLimit = 5;
+
+    //public SpriteRenderer i;
 
     public float move_speed;
 
@@ -30,6 +33,7 @@ public class WeatherAndBoss : MonoBehaviour
 
     void Start()
     {
+        //i = gameObject.GetComponent<SpriteRenderer>();
         Init();
     }
 
