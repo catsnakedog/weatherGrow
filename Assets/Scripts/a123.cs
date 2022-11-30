@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class a123 : MonoBehaviour
-{
+{  
+    
     public GameObject Image1;
     public GameObject Image2;
     public GameObject Image3;
@@ -11,10 +12,23 @@ public class a123 : MonoBehaviour
     public float time;
     public bool ImageChange;
     // Start is called before the first frame update
-    void Start()
+    public int savedScore = 0  ;
+    string Key  = "key"; 
+
+    void Awake()
     {
+     
+       if(savedScore == 1)
+       {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("StartScene") ; 
+       }
+     
+    }
+    void Start()
+    { 
         time = 0f;
         ImageChange = false;
+        PlayerPrefs.SetInt(Key, 1); 
     }
 
     // Update is called once per frame

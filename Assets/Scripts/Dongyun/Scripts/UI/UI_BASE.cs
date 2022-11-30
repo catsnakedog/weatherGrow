@@ -7,9 +7,13 @@ public class UI_BASE : MonoBehaviour
 {
     public GameObject Setting ; 
      static int SettingCount  = 1 ; 
+     SoundManager _sound = new SoundManager() ; 
+     public AudioClip bgm ; 
     void Start()
     {
-        
+       _sound.Init() ; 
+       
+       
     }
 
     // Update is called once per frame
