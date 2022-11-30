@@ -41,7 +41,7 @@ public class SoundManager :MonoBehaviour
         }
 
         _audioSources[(int)Sound.Bgm].loop = true ; 
-        Debug.Log("err") ; 
+       
      }
    }
 public AudioClip bgm1 ;
