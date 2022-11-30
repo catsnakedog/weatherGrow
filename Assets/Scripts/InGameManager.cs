@@ -27,11 +27,12 @@ public class InGameManager : MonoBehaviour
         else if (month >= 6 && month <= 8) season = 1;
         else if (month >= 9 && month <= 11) season = 2;
         else season = 3;
+        GameManager.instance.season = season;
 
         if (seasonEnd)
         {
             year++;
-            speed = 1 + year * 0.25f;
+            GameManager.instance.speed = 1 + year * 0.25f;
             StartCoroutine(YearPlay());
             seasonEnd = false;
         }
