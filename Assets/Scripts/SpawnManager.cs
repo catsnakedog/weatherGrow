@@ -18,16 +18,15 @@ public class SpawnManager : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("SpawnRandomWeather", startDelay, spawnInterval);
     }
 
     // Update is called once per frame
     void Update()
     {
-        UpdateController();
+        //UpdateController();
     }
 
-    void SpawnRandomWeather()
+    public void SpawnRandomWeather()
     {
         if (GameManager.instance.season == 0)
         {
@@ -38,7 +37,8 @@ public class SpawnManager : MonoBehaviour
         int weatherIndex = Random.Range(0, weatherPrefabs.Length);
         Vector3 spawnPos = new Vector3(spawnX, spawnY, 1);
 
-        Instantiate(weatherPrefabs[weatherIndex], spawnPos, weatherPrefabs[weatherIndex].transform.rotation);
+
+        //Instantiate(weatherPrefabs[weatherIndex], spawnPos, weatherPrefabs[weatherIndex].transform.rotation);
     }
 
     public void SpringKill(Spring spring)

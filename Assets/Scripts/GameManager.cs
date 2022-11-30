@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     public List<int> weatherState = new List<int> { };
     public int season; // 계절 봄/여름/가을/겨울 0/1/2/3
     public int hp;
+    public int speed;
 
 
     #endregion

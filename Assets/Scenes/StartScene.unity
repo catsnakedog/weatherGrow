@@ -638,7 +638,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.89476764, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2041,7 +2041,7 @@ MonoBehaviour:
   Left: {fileID: 579031172}
   Right: {fileID: 1182466008}
   ImageList:
-  - {fileID: 21300000, guid: 55ef818d180350448b83f8470580c7d4, type: 3}
+  - {fileID: 21300000, guid: 621bcc854221ca343b658543d8874d82, type: 3}
   - {fileID: 21300000, guid: 055bc41c19f8da84f8c8e4bd9da13371, type: 3}
   ImageCount: 0
 --- !u!4 &1852409760
