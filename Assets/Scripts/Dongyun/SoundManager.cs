@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 // 사용법
-public class SoundManager 
+public class SoundManager :MonoBehaviour 
 {
    AudioSource[] _audioSources  = new AudioSource[(int)Sound.MaxCount] ;
 
@@ -13,6 +13,18 @@ public class SoundManager
     MaxCount,
 
    }
+
+  void Start()
+   {
+        Init() ; 
+
+   }
+
+ void Update()
+ {
+   SeasonChangeSensor() ; 
+ }
+   
    public void Init()
    {
      GameObject root = GameObject.Find("Sound");
@@ -29,10 +41,59 @@ public class SoundManager
         }
 
         _audioSources[(int)Sound.Bgm].loop = true ; 
+        Debug.Log("err") ; 
      }
    }
+public AudioClip bgm1 ;
+public AudioClip bgm2 ;
+public AudioClip bgm3 ;
+public AudioClip bgm4 ;
+public AudioClip bgm5 ;
+    
+  int SeasonValue;
+     
+   int tmp;
+    public void  SeasonChangeSensor()
+{
+     SeasonValue = GameManager.instance.season;
+     if(SeasonValue!=tmp)
+     {
+         GameAudioPlay();
+     }
+  
+   tmp = SeasonValue ; 
+ 
+  
+}
+public void GameAudioPlay()
+{   
+   if(GameManager. instance.season == -1)
+   { 
+     Play(bgm1,Sound.Bgm) ; 
+
+   }
+  
+    if(GameManager. instance.season == 0)
+   { 
+     Play(bgm2,Sound.Bgm) ; 
+
+   }
+     if(GameManager. instance.season == 1)
+   { 
+     Play(bgm3,Sound.Bgm) ; 
+
+   }
+     if(GameManager. instance.season == 2)
+   { 
+     Play(bgm4,Sound.Bgm) ; 
 
    
+     if(GameManager. instance.season == 3)
+   { 
+     Play(bgm5,Sound.Bgm) ; 
+
+   }}
+}
 
 
 
@@ -57,6 +118,9 @@ public class SoundManager
 
        }
 
+
+
+       
        else
        {
            
