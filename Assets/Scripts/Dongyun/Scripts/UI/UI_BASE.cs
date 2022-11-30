@@ -11,7 +11,7 @@ public class UI_BASE : MonoBehaviour
      public AudioClip bgm ; 
     void Start()
     {
-       _sound.Init() ; 
+       
        
        
     }

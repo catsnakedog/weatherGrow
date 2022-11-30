@@ -2018,6 +2018,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1743877870}
   - component: {fileID: 1743877869}
+  - component: {fileID: 1743877871}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -2040,7 +2041,7 @@ MonoBehaviour:
   weatherList: []
   nowState: 
   weatherState: 
-  season: 0
+  season: -1
   hp: 0
   speed: 1
 --- !u!4 &1743877870
@@ -2057,6 +2058,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1743877871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743877868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81acb8ce9e6bfcc499711847f49f9dd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgm1: {fileID: 8300000, guid: 3cc6fde633b747d41a6d058e7707f82a, type: 3}
+  bgm2: {fileID: 8300000, guid: dc6d4d7947d9f6c419dc0a469b065794, type: 3}
+  bgm3: {fileID: 8300000, guid: a3fa9bb9259ac9d48abedcbf96d4e4cc, type: 3}
+  bgm4: {fileID: 0}
+  bgm5: {fileID: 0}
 --- !u!1 &1852409758
 GameObject:
   m_ObjectHideFlags: 0
