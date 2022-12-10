@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
 
     #region 인게임 2
     public Queue<GameObject> q = new Queue<GameObject>();
-
+    public bool gameState = false;
 
     public Action<Button> clickedBtn;
 

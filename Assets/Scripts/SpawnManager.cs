@@ -51,7 +51,7 @@ public class SpawnManager : MonoBehaviour
 
     void UpdateController() //que의 맨앞에 있는 오브젝트를 찾아서 list가 충족되거나 바운더리 밖으로 나갔을때 파괴를 시키도록
     {
-        if (!GameManager.instance.q.Peek())
+        if (GameManager.instance.gameState)
         {
             findObj = GameManager.instance.q.Peek();
             _findObj = findObj.GetComponent<WeatherAndBoss>();
