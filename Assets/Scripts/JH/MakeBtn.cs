@@ -55,75 +55,82 @@ public class MakeBtn : MonoBehaviour
 
     private void CheckAns1()
     {
-        n = GameManager.instance.q.Peek().GetComponent<WeatherAndBoss>();
-        if (n.weather.Contains(1))
+        if(GameManager.instance.q.Count != 0)
         {
-            for(int i = 0; i<3; i++)
+            n = GameManager.instance.q.Peek().GetComponent<WeatherAndBoss>();
+            if (n.weather.Contains(1))
             {
-                if(n.weather[i] == 1)
+                for (int i = 0; i < 3; i++)
                 {
-                    n.weather.RemoveAt(i);
-                    btn1.onClick.RemoveListener(CheckAns1);
-                    break;
+                    if (n.weather[i] == 1)
+                    {
+                        n.weather.RemoveAt(i);
+                        btn1.onClick.RemoveListener(CheckAns1);
+                        break;
+                    }
                 }
             }
+            else if (!n.weather.Contains(1)) GameManager.instance.hp--;
+            else if (n.weather == null) return;
         }
-        else if (!n.weather.Contains(1)) GameManager.instance.hp--;
-        else if (n.weather == null) return;
+        
     }
-    private void CheckAns2()
+    private void CheckAns2() //Update문에서 프레임 문제로 한번 클릭도 2번으로 인식
     {
-        n = GameManager.instance.q.Peek().GetComponent<WeatherAndBoss>();
-        if (n.weather.Contains(2))
+        if (GameManager.instance.q.Count != 0)
         {
-            for (int i = 0; i < 3; i++)
+            n = GameManager.instance.q.Peek().GetComponent<WeatherAndBoss>();
+            if (n.weather.Contains(2))
             {
-                if (n.weather[i] == 2)
-                {
-                    n.weather.RemoveAt(i);
-                    btn1.onClick.RemoveListener(CheckAns2);
-                    break;
-                }
+                n.weather.Remove(2);
+                Debug.Log("클릭된 횟수");
             }
+            else if (!n.weather.Contains(2)) GameManager.instance.hp--;
+            else if (n.weather == null) return;
         }
-        else if (!n.weather.Contains(2)) GameManager.instance.hp--;
-        else if (n.weather == null) return;
+            
     }
     private void CheckAns3()
     {
-        n = GameManager.instance.q.Peek().GetComponent<WeatherAndBoss>();
-        if (n.weather.Contains(3))
+        if (GameManager.instance.q.Count != 0)
         {
-            for (int i = 0; i < 3; i++)
+            n = GameManager.instance.q.Peek().GetComponent<WeatherAndBoss>();
+            if (n.weather.Contains(3))
             {
-                if (n.weather[i] == 3)
+                for (int i = 0; i < 3; i++)
                 {
-                    n.weather.RemoveAt(i);
-                    btn1.onClick.RemoveListener(CheckAns3);
-                    break;
+                    if (n.weather[i] == 3)
+                    {
+                        n.weather.RemoveAt(i);
+                        btn1.onClick.RemoveListener(CheckAns3);
+                        break;
+                    }
                 }
             }
+            else if (!n.weather.Contains(3)) GameManager.instance.hp--;
+            else if (n.weather == null) return;
         }
-        else if (!n.weather.Contains(3)) GameManager.instance.hp--;
-        else if (n.weather == null) return;
     }
     private void CheckAns4()
     {
-        n = GameManager.instance.q.Peek().GetComponent<WeatherAndBoss>();
-        if (n.weather.Contains(4))
+        if (GameManager.instance.q.Count != 0)
         {
-            for (int i = 0; i < 3; i++)
+            n = GameManager.instance.q.Peek().GetComponent<WeatherAndBoss>();
+            if (n.weather.Contains(4))
             {
-                if (n.weather[i] == 4)
+                for (int i = 0; i < 3; i++)
                 {
-                    n.weather.RemoveAt(i);
-                    btn1.onClick.RemoveListener(CheckAns4);
-                    break;
+                    if (n.weather[i] == 4)
+                    {
+                        n.weather.RemoveAt(i);
+                        btn1.onClick.RemoveListener(CheckAns4);
+                        break;
+                    }
                 }
             }
+            else if (!n.weather.Contains(4)) GameManager.instance.hp--;
+            else if (n.weather == null) return;
         }
-        else if (!n.weather.Contains(4)) GameManager.instance.hp--;
-        else if (n.weather == null) return;
     }
 
 

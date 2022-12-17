@@ -35,13 +35,15 @@ public class GameManager : MonoBehaviour
     public int season; // 계절 봄/여름/가을/겨울 0/1/2/3
     public int hp;
     public float speed;
+    public int bestScore;
+    public int crruentScore;
 
 
     #endregion
 
     #region 인게임 2
     public Queue<GameObject> q = new Queue<GameObject>();
-
+    public bool gameState = false;
 
     public Action<Button> clickedBtn;
 
