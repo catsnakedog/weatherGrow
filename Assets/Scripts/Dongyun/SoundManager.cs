@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 // 사용법
 public class SoundManager :MonoBehaviour 
 {
    AudioSource[] _audioSources  = new AudioSource[(int)Sound.MaxCount] ;
+   [SerializeField] Slider VolumeSlider ;
 
    public enum Sound
    {
@@ -37,6 +39,7 @@ public class SoundManager :MonoBehaviour
         {
            GameObject go =   new GameObject{name = soundNames[i]} ; 
            _audioSources[i] = go.AddComponent<AudioSource>() ; 
+           
            go.transform.parent = root.transform ; 
         }
 
@@ -50,6 +53,8 @@ public AudioClip bgm3 ;
 public AudioClip bgm4 ;
 public AudioClip bgm5 ;
     
+ AudioSource CurBgm =null ; 
+ AudioSource CurSfx  = null ; 
   int SeasonValue;
      
    int tmp;
@@ -113,6 +118,7 @@ public void GameAudioPlay()
              if(audioSource.isPlaying) audioSource.Stop() ; //만약 다른비지엠이 재생중이라면 정지
             audioSource.pitch = pitch ; 
             audioSource.clip = audioClip ; 
+            //CurBgm.clip = audioSource.clip  ; 
             audioSource.Play() ; 
 
 
@@ -131,9 +137,21 @@ public void GameAudioPlay()
              }
             AudioSource audioSource = _audioSources[(int)Sound.Effect] ; 
             audioSource.pitch = pitch ; 
+           // CurSfx.clip = audioSource.clip ; 
             audioSource.PlayOneShot(audioClip) ; 
             
        }
    }
 
+   public void SetBgmVolume()
+   {
+       AudioSource obj1 =   _audioSources[(int)Sound.Bgm] ;
+       obj1.volume = VolumeSlider.value ;
+   }
+
+   public void SetSfxVolume()
+   {
+          AudioSource obj1 =   _audioSources[(int)Sound.Effect] ;
+          obj1.volume =  VolumeSlider.value ;
+   }
 }

@@ -13,12 +13,11 @@ public class save : MonoBehaviour
     public bool ImageChange;
     // Start is called before the first frame update
     public int savedScore = 0  ;
-    string Key  = "key"; 
-
+    
     void Awake()
     {
-     
-       if(savedScore == 1)
+       int load = PlayerPrefs.GetInt("skip") ; 
+       if(load == 1)
        {
             UnityEngine.SceneManagement.SceneManager.LoadScene("StartScene") ; 
        }
@@ -28,7 +27,8 @@ public class save : MonoBehaviour
     { 
         time = 0f;
         ImageChange = false;
-        PlayerPrefs.SetInt(Key, 1); 
+        savedScore = 1 ;
+        PlayerPrefs.SetInt("skip",savedScore) ; 
     }
 
     // Update is called once per frame

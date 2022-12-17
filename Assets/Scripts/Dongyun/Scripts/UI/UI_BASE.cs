@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class UI_BASE : MonoBehaviour
 {
-    public GameObject Setting ; 
-     static int SettingCount  = 1 ; 
-     SoundManager _sound = new SoundManager() ; 
-     public AudioClip bgm ; 
+ 
+   
+     //SoundManager _sound = new SoundManager() ; 
+     // public AudioClip bgm ; 
     void Start()
     {
        
@@ -21,19 +21,19 @@ public class UI_BASE : MonoBehaviour
     {
         
     }
-   
+      
     public void ButtonSetting() // 설정팝업창 생성
     {   
-         if(SettingCount == 0) return ; 
-          Instantiate(Setting) ;
-          SettingCount =0;
+        //GameObject root = GameObject.Find("SettingCanavas");
+       GameObject obj1 = transform.Find("SettingCanvas").gameObject;
+       obj1.SetActive(true);
     }
-
+  
     public void ButtonClose()  // 설정 팝업 닫기
-    {
-
-          Destroy(gameObject) ; 
-          SettingCount = 1 ;
+    { 
+       GameObject obj1 = GameObject.Find("Canvas");
+       GameObject obj2 = obj1.transform.Find("SettingCanvas").gameObject;
+       obj2.SetActive(false);
     }
       
     public void MenuSceneChange() // 메뉴로 돌아가는 함수
