@@ -37,7 +37,7 @@ public class WeatherAndBoss : MonoBehaviour
         Init();
     }
 
-    void Update()
+    /*void Update()
     {
         if (transform.position.x < -leftLimit)
         {
@@ -45,6 +45,8 @@ public class WeatherAndBoss : MonoBehaviour
             GameManager.instance.q.Dequeue();
         }
     }
+    */
+
     protected virtual void Init()
     {
 

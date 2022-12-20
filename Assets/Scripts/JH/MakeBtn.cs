@@ -6,18 +6,18 @@ using UnityEngine.UI;
 public class MakeBtn : MonoBehaviour
 {
     //시계 방향으로 버튼 할당
-    public Button btn1;
-    public Button btn2;
-    public Button btn3;
-    public Button btn4;
+    //public Button btn1;
+    //public Button btn2;
+    //public Button btn3;
+    //public Button btn4;
 
-    private WeatherAndBoss n;
+     private WeatherAndBoss n;
 
     //각 버튼에 해당하는 날씨 1234 1234 1245 1634 해/비/구름/바람/안개/눈
-    private int[] btnFunc1 = new int[4];
+    //private int[] btnFunc1 = new int[4];
 
     //계절에 따른 버튼 할당 매서드
-    public void Update()
+  /*  public void Update()
     {
         if (GameManager.instance.season == 0) //1234
         {
@@ -52,6 +52,101 @@ public class MakeBtn : MonoBehaviour
             return;
         }
     }
+  */
+
+    //버튼이 눌렸을 때 실행될 함수
+    public void Onclickbtn1()
+    {
+        if (GameManager.instance.season == 0) //1234
+        {
+            CheckAns1();
+        }
+        else if (GameManager.instance.season == 1)
+        {
+            CheckAns1();
+        }
+        else if (GameManager.instance.season == 2)
+        {
+            CheckAns1();
+        }
+        else if (GameManager.instance.season == 3)
+        {
+            CheckAns1();
+        }
+        else
+        {
+            return;
+        }
+    }
+    public void Onclickbtn2()
+    {
+        if (GameManager.instance.season == 0) //1234
+        {
+            CheckAns2();
+        }
+        else if (GameManager.instance.season == 1)
+        {
+            CheckAns2();
+        }
+        else if (GameManager.instance.season == 2)
+        {
+            CheckAns2();
+        }
+        else if (GameManager.instance.season == 3)
+        {
+            CheckAns6();
+        }
+        else
+        {
+            return;
+        }
+    }
+    public void Onclickbtn3()
+    {
+        if (GameManager.instance.season == 0) //1234
+        {
+            CheckAns3();
+        }
+        else if (GameManager.instance.season == 1)
+        {
+            CheckAns3();
+        }
+        else if (GameManager.instance.season == 2)
+        {
+            CheckAns4();
+        }
+        else if (GameManager.instance.season == 3)
+        {
+            CheckAns3();
+        }
+        else
+        {
+            return;
+        }
+    }
+    public void Onclickbtn4()
+    {
+        if (GameManager.instance.season == 0) //1234
+        {
+            CheckAns4();
+        }
+        else if (GameManager.instance.season == 1)
+        {
+            CheckAns4();
+        }
+        else if (GameManager.instance.season == 2)
+        {
+            CheckAns5();
+        }
+        else if (GameManager.instance.season == 3)
+        {
+            CheckAns4();
+        }
+        else
+        {
+            return;
+        }
+    }
 
     private void CheckAns1()
     {
@@ -60,15 +155,7 @@ public class MakeBtn : MonoBehaviour
             n = GameManager.instance.q.Peek().GetComponent<WeatherAndBoss>();
             if (n.weather.Contains(1))
             {
-                for (int i = 0; i < 3; i++)
-                {
-                    if (n.weather[i] == 1)
-                    {
-                        n.weather.RemoveAt(i);
-                        btn1.onClick.RemoveListener(CheckAns1);
-                        break;
-                    }
-                }
+                n.weather.Remove(1);
             }
             else if (!n.weather.Contains(1)) GameManager.instance.hp--;
             else if (n.weather == null) return;
@@ -97,15 +184,7 @@ public class MakeBtn : MonoBehaviour
             n = GameManager.instance.q.Peek().GetComponent<WeatherAndBoss>();
             if (n.weather.Contains(3))
             {
-                for (int i = 0; i < 3; i++)
-                {
-                    if (n.weather[i] == 3)
-                    {
-                        n.weather.RemoveAt(i);
-                        btn1.onClick.RemoveListener(CheckAns3);
-                        break;
-                    }
-                }
+                n.weather.Remove(3);
             }
             else if (!n.weather.Contains(3)) GameManager.instance.hp--;
             else if (n.weather == null) return;
@@ -118,20 +197,38 @@ public class MakeBtn : MonoBehaviour
             n = GameManager.instance.q.Peek().GetComponent<WeatherAndBoss>();
             if (n.weather.Contains(4))
             {
-                for (int i = 0; i < 3; i++)
-                {
-                    if (n.weather[i] == 4)
-                    {
-                        n.weather.RemoveAt(i);
-                        btn1.onClick.RemoveListener(CheckAns4);
-                        break;
-                    }
-                }
+                n.weather.Remove(4);
             }
             else if (!n.weather.Contains(4)) GameManager.instance.hp--;
             else if (n.weather == null) return;
         }
     }
 
+    private void CheckAns5()
+    {
+        if (GameManager.instance.q.Count != 0)
+        {
+            n = GameManager.instance.q.Peek().GetComponent<WeatherAndBoss>();
+            if (n.weather.Contains(5))
+            {
+                n.weather.Remove(5);
+            }
+            else if (!n.weather.Contains(5)) GameManager.instance.hp--;
+            else if (n.weather == null) return;
+        }
+    }
+    private void CheckAns6()
+    {
+        if (GameManager.instance.q.Count != 0)
+        {
+            n = GameManager.instance.q.Peek().GetComponent<WeatherAndBoss>();
+            if (n.weather.Contains(6))
+            {
+                n.weather.Remove(6);
+            }
+            else if (!n.weather.Contains(6)) GameManager.instance.hp--;
+            else if (n.weather == null) return;
+        }
+    }
 
 }
