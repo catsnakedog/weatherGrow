@@ -144,7 +144,6 @@ public class InGameManager : MonoBehaviour
         {
             yield return new WaitForSeconds(2f);
             SpawnManager.SpawnRandomWeather();
-            n = GameManager.instance.q.Peek().GetComponent<WeatherAndBoss>();
             GameManager.instance.crruentScore++;
         }
         month++;
@@ -152,7 +151,6 @@ public class InGameManager : MonoBehaviour
         {
             yield return new WaitForSeconds(2f);
             SpawnManager.SpawnRandomWeather();
-            n = GameManager.instance.q.Peek().GetComponent<WeatherAndBoss>();
             GameManager.instance.crruentScore++;
         }
         month++;
