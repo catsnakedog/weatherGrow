@@ -27,6 +27,7 @@ public class InGameManager : MonoBehaviour
 
     void Start()
     {
+        GameManager.instance.bestScore = PlayerPrefs.GetInt("BestScore");
         SpawnManager = GameObject.FindWithTag("InGame").GetComponent<SpawnManager>();
         speed = 1;
         year = 1;

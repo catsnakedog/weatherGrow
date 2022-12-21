@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
     public int hp;
     public int bossClick;
     public float speed;
-    public int bestScore = PlayerPrefs.GetInt("BestScore") ; 
+    public int bestScore;
     public int crruentScore; // n년 n개월 n주 이런식으로 점수가 저장됨 crruentScore에는 n주 형식으로 데이터가 들어감 스코어 표시할때 n주 기준으로 형태 바꿔서 나타내기
 
 
