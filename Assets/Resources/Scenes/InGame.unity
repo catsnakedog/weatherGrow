@@ -432,7 +432,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49997b25b85f9a341afacd0b482fa70a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossHpText: {fileID: 0}
+  bossHP: {fileID: 720354168}
+  bossHpText: {fileID: 1197022542}
   bestScoreText: {fileID: 632161709}
   scoreText: {fileID: 1665291083}
   seasonText: {fileID: 973696541}
@@ -1700,7 +1701,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &720354169
 RectTransform:
   m_ObjectHideFlags: 0

@@ -10,6 +10,7 @@ public class InGameManager : MonoBehaviour
 {
     SpawnManager SpawnManager;
 
+    [SerializeField] private GameObject bossHP;
     [SerializeField] private Text bossHpText;
     [SerializeField] private Text bestScoreText;
     [SerializeField] private Text scoreText;
@@ -51,7 +52,13 @@ public class InGameManager : MonoBehaviour
                 temp += n.weather[j].ToString();
             }
             tempText.text = temp;
-        }    
+        }
+
+        if (GameManager.instance.boss == null)
+        {
+            bossHP.SetActive(false);
+            bossHpText.text = "보스없음";
+        }
 
         if (month >= 3 && month <= 5) season = 0;
         else if (month >= 6 && month <= 8) season = 1;
@@ -161,8 +168,9 @@ public class InGameManager : MonoBehaviour
         yield return new WaitForSeconds(6f);
         // 시즌이 끝날때 보스 소환 추가 여기다가 @@@@@@@
         SpawnManager.SpawnBossWeather();
+        bossHP.SetActive(true);
+        bossHpText.text = "보스출현!";
         yield return new WaitForSeconds(8f);
-
         month++;
     }
 }
