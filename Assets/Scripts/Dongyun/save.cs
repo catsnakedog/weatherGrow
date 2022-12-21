@@ -1,6 +1,7 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class save : MonoBehaviour
@@ -13,22 +14,16 @@ public class save : MonoBehaviour
     public bool ImageChange;
     // Start is called before the first frame update
     public int savedScore = 0  ;
-    
-    void Awake()
-    {
-       int load = PlayerPrefs.GetInt("skip") ; 
-       if(load == 1)
-       {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("StartScene") ; 
-       }
-     
-    }
+      
+    UI_BASE _ui = new UI_BASE() ; 
+   
+
     void Start()
     { 
         time = 0f;
         ImageChange = false;
-        savedScore = 1 ;
-        PlayerPrefs.SetInt("skip",savedScore) ; 
+       
+       
     }
 
     // Update is called once per frame
@@ -39,8 +34,23 @@ public class save : MonoBehaviour
         {
             ImageChange = true;
         }
+        if(Image3.activeSelf==false)
+        {
+             savedScore = 1 ;
+             Debug.Log("save 스코어 1"); 
+              PlayerPrefs.SetInt("skip",savedScore) ; 
+               _ui.MenuSceneChange() ; 
+        }
     }
-
+    void LateUpdate()
+    {
+       int load = PlayerPrefs.GetInt("skip") ; 
+       if(load == 1)
+       {
+            Debug.Log("씬이동") ; 
+            UnityEngine.SceneManagement.SceneManager.LoadScene("StartScene") ; 
+       }
+    }
     public void ImageC1()
     {
         if (ImageChange)
@@ -68,4 +78,6 @@ public class save : MonoBehaviour
             ImageChange = false;
         }
     }
+    
+    
 }
