@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HpScript : MonoBehaviour
 {
@@ -24,16 +25,7 @@ public class HpScript : MonoBehaviour
         {
             if (check) return;
             check = true;
-            ShowPopup(Gameover);
+            SceneManager.LoadScene("GameEnd");
         }
     }
-
-    private void ShowPopup(GameObject go)
-    {
-        go.SetActive(true);
-        Time.timeScale = 0;
-    }
-
-
-
 }

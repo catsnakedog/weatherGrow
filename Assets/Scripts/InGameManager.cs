@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class InGameManager : MonoBehaviour
@@ -80,20 +81,23 @@ public class InGameManager : MonoBehaviour
         GameManager.instance.bossClick = bossClick;
         for (int i = 1; i < 5; i++) // 1개월
         {
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(2f);
             SpawnManager.SpawnRandomWeather();
+            GameManager.instance.crruentScore++;
         }
         month++;
         for (int i = 1; i < 5; i++) // 2개월
         {
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(2f);
             SpawnManager.SpawnRandomWeather();
+            GameManager.instance.crruentScore++;
         }
         month++;
         for (int i = 1; i < 5; i++) // 3개월
         {
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(2f);
             SpawnManager.SpawnRandomWeather();
+            GameManager.instance.crruentScore++;
         }
         month++;
 
