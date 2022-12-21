@@ -10,6 +10,7 @@ public class InGameManager : MonoBehaviour
 {
     SpawnManager SpawnManager;
 
+    [SerializeField] private Text bossHpText;
     [SerializeField] private Text bestScoreText;
     [SerializeField] private Text scoreText;
     [SerializeField] private Text seasonText;
@@ -122,22 +123,19 @@ public class InGameManager : MonoBehaviour
     {
         Debug.Log("test");
         StartCoroutine(SeasonPlay());
-        yield return new WaitForSeconds(24f);
+        yield return new WaitForSeconds(38f);
         StartCoroutine(SeasonPlay());
-        yield return new WaitForSeconds(24f);
+        yield return new WaitForSeconds(38f);
         StartCoroutine(SeasonPlay());
-        yield return new WaitForSeconds(24f);
+        yield return new WaitForSeconds(38f);
         StartCoroutine(SeasonPlay());
-        yield return new WaitForSeconds(24f);
+        yield return new WaitForSeconds(38f);
         seasonEnd = true;
     }
     IEnumerator SeasonPlay()
     {
         bossClick += 5;
         GameManager.instance.bossClick = bossClick;
-        SpawnManager.SpawnBossWeather();
-        yield return new WaitForSeconds(10f);
-        
 
         for (int i = 1; i < 5; i++) // 1개월
         {
@@ -159,8 +157,12 @@ public class InGameManager : MonoBehaviour
             SpawnManager.SpawnRandomWeather();
             GameManager.instance.crruentScore++;
         }
-        month++;
 
+        yield return new WaitForSeconds(6f);
         // 시즌이 끝날때 보스 소환 추가 여기다가 @@@@@@@
+        SpawnManager.SpawnBossWeather();
+        yield return new WaitForSeconds(8f);
+
+        month++;
     }
 }
