@@ -6,7 +6,10 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject[] weatherPrefabs;
     public GameObject springPrefab;
-    
+    public GameObject summerPrefab;
+    public GameObject fallPrefab;
+    public GameObject winterPrefab;
+
     private GameObject _obj; //생성된 인스턴스를 저장할 임시변수
     private GameObject findObj; //que의 맨앞 오브젝트를 저장할 임시변수
     private WeatherAndBoss _findObj;
@@ -34,11 +37,24 @@ public class SpawnManager : MonoBehaviour
             _obj = Instantiate(springPrefab, spawnPos0, springPrefab.transform.rotation);
             GameManager.instance.q.Enqueue(_obj);
         }
-        int weatherIndex = Random.Range(0, weatherPrefabs.Length);
-        Vector3 spawnPos = new Vector3(spawnX, spawnY, 1);
-
-
-        //Instantiate(weatherPrefabs[weatherIndex], spawnPos, weatherPrefabs[weatherIndex].transform.rotation);
+        else if (GameManager.instance.season == 1)
+        {
+            Vector3 spawnPos0 = new Vector3(spawnX, spawnY, 1);
+            _obj = Instantiate(summerPrefab, spawnPos0, summerPrefab.transform.rotation);
+            GameManager.instance.q.Enqueue(_obj);
+        }
+        else if (GameManager.instance.season == 2)
+        {
+            Vector3 spawnPos0 = new Vector3(spawnX, spawnY, 1);
+            _obj = Instantiate(fallPrefab, spawnPos0, fallPrefab.transform.rotation);
+            GameManager.instance.q.Enqueue(_obj);
+        }
+        else if (GameManager.instance.season == 3)
+        {
+            Vector3 spawnPos0 = new Vector3(spawnX, spawnY, 1);
+            _obj = Instantiate(winterPrefab, spawnPos0, winterPrefab.transform.rotation);
+            GameManager.instance.q.Enqueue(_obj);
+        }
     }
 
     public void SpringKill(Spring spring)

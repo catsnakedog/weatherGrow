@@ -10,7 +10,9 @@ public class InGameManager : MonoBehaviour
 {
     SpawnManager SpawnManager;
 
+    [SerializeField] private Text bestScoreText;
     [SerializeField] private Text scoreText;
+    [SerializeField] private Text seasonText;
     [SerializeField] private Text tempText;
     [SerializeField] private int year;
     [SerializeField] private int speed;
@@ -62,6 +64,30 @@ public class InGameManager : MonoBehaviour
 
         GameManager.instance.season = season;
         scoreText.text = (GameManager.instance.crruentScore / 48).ToString() + "년 " + ((GameManager.instance.crruentScore%48) / 4).ToString() + "월 " + (GameManager.instance.crruentScore%4).ToString() + "주 ";
+        if (GameManager.instance.bestScore == 0)
+        {
+            bestScoreText.text = "아직없음!";
+        }
+        else bestScoreText.text = (GameManager.instance.bestScore / 48).ToString() + "년 " + ((GameManager.instance.bestScore % 48) / 4).ToString() + "월 " + (GameManager.instance.bestScore % 4).ToString() + "주 ";
+
+        switch(season)
+        {
+            case 0:
+                seasonText.text = "봄";
+                return;
+            case 1:
+                seasonText.text = "여름";
+                return;
+            case 2:
+                seasonText.text = "가을";
+                return;
+            case 3:
+                seasonText.text = "겨울";
+                return;
+            default:
+                seasonText.text = "오류";
+                return;
+        }
 
         if (seasonEnd)
         {
@@ -73,7 +99,7 @@ public class InGameManager : MonoBehaviour
 
         if (GameManager.instance.hp < 3)
         {
-            hearts[0].SetActive(false);
+            hearts[2].SetActive(false);
         }
         if (GameManager.instance.hp < 2)
         {
@@ -81,7 +107,7 @@ public class InGameManager : MonoBehaviour
         }
         if (GameManager.instance.hp < 1)
         {
-            hearts[2].SetActive(false);
+            hearts[0].SetActive(false);
         }
     }
 
@@ -118,7 +144,6 @@ public class InGameManager : MonoBehaviour
         {
             yield return new WaitForSeconds(2f);
             SpawnManager.SpawnRandomWeather();
-            n = GameManager.instance.q.Peek().GetComponent<WeatherAndBoss>();
             GameManager.instance.crruentScore++;
         }
         month++;
@@ -126,7 +151,6 @@ public class InGameManager : MonoBehaviour
         {
             yield return new WaitForSeconds(2f);
             SpawnManager.SpawnRandomWeather();
-            n = GameManager.instance.q.Peek().GetComponent<WeatherAndBoss>();
             GameManager.instance.crruentScore++;
         }
         month++;
