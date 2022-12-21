@@ -25,6 +25,7 @@ public class HpScript : MonoBehaviour
         {
             if (check) return;
             check = true;
+            GameManager.instance.q.Clear();
             SceneManager.LoadScene("GameEnd");
         }
     }
