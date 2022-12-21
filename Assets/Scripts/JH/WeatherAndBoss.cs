@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
 public class WeatherAndBoss : MonoBehaviour
@@ -46,7 +47,10 @@ public class WeatherAndBoss : MonoBehaviour
         }
     }
     */
+    protected virtual void Update()
+    {
 
+    }
     protected virtual void Init()
     {
 
