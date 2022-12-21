@@ -22,6 +22,8 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private float startDelay = 2;
     [SerializeField] private float spawnInterval = 1.5f;
 
+    private bool DestoryObj;
+
     void Start()
     {
     }
@@ -91,11 +93,12 @@ public class SpawnManager : MonoBehaviour
             {
                 findObj = GameManager.instance.q.Peek();
                 _findObj = findObj.GetComponent<WeatherAndBoss>();
-                if (_findObj.weather.Count == 0 || findObj.transform.position.x < -2.7f)
+                if (_findObj.weather.Count == 0)
                 {
                     Color color = findObj.GetComponent<SpriteRenderer>().color;
                     color.a = 0.5f;
                     findObj.GetComponent<SpriteRenderer>().color = color;
+                    findObj.GetComponent<WeatherMove>().destoryObj = true;
                     GameManager.instance.q.Dequeue();
                 }
                 if (findObj.transform.position.x < -2.7f)
