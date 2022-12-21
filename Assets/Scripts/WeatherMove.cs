@@ -10,10 +10,5 @@ public class WeatherMove : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.left * GameManager.instance.speed * Time.deltaTime);
-
-        if(gameObject.transform.position.x < -2.7f)
-        {
-            Destroy(gameObject);
-        }
     }
 }
