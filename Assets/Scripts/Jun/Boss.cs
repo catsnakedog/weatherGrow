@@ -18,6 +18,8 @@ public class Boss : WeatherAndBoss
 
     protected override void Init()
     {
+        HPPoint = GameObject.FindGameObjectWithTag("HPPoint").GetComponent<Image>();
+        HPPoint.fillAmount = (bossHp / GameManager.instance.bossClick);
         int bossIndex = GameManager.instance.season % 4;
         _Bosstype = (Define.Boss)(bossIndex);
 
@@ -28,18 +30,12 @@ public class Boss : WeatherAndBoss
 
     public override void Kill()
     {
-
         Destroy(gameObject);
         Destroy(this);
     }
 
-    void Start()
+    protected override void Update()
     {
-        HPPoint = GameObject.FindGameObjectWithTag("HPPoint").GetComponent<Image>();
-    }
-
-    void Update()
-    {
-        HPPoint.fillAmount = (bossHp / GameManager.instance.bossClick);
+        HPPoint.fillAmount = ((float)bossHp / GameManager.instance.bossClick);
     }
 }
