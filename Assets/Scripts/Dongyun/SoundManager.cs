@@ -54,8 +54,7 @@ public AudioClip bgm3 ;
 public AudioClip bgm4 ;
 public AudioClip bgm5 ;
     
- AudioSource CurBgm =null ; 
- AudioSource CurSfx  = null ; 
+ 
   int SeasonValue;
      
    int tmp;
