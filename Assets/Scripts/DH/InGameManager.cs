@@ -10,6 +10,8 @@ public class InGameManager : MonoBehaviour
 {
     SpawnManager SpawnManager;
 
+    [SerializeField] private GameObject bossHP;
+    [SerializeField] private Text bossHpText;
     [SerializeField] private Text bestScoreText;
     [SerializeField] private Text scoreText;
     [SerializeField] private Text seasonText;
@@ -50,7 +52,13 @@ public class InGameManager : MonoBehaviour
                 temp += n.weather[j].ToString();
             }
             tempText.text = temp;
-        }    
+        }
+
+        if (GameManager.instance.boss == null)
+        {
+            bossHP.SetActive(false);
+            bossHpText.text = "보스없음";
+        }
 
         if (month >= 3 && month <= 5) season = 0;
         else if (month >= 6 && month <= 8) season = 1;
@@ -122,22 +130,19 @@ public class InGameManager : MonoBehaviour
     {
         Debug.Log("test");
         StartCoroutine(SeasonPlay());
-        yield return new WaitForSeconds(24f);
+        yield return new WaitForSeconds(38f);
         StartCoroutine(SeasonPlay());
-        yield return new WaitForSeconds(24f);
+        yield return new WaitForSeconds(38f);
         StartCoroutine(SeasonPlay());
-        yield return new WaitForSeconds(24f);
+        yield return new WaitForSeconds(38f);
         StartCoroutine(SeasonPlay());
-        yield return new WaitForSeconds(24f);
+        yield return new WaitForSeconds(38f);
         seasonEnd = true;
     }
     IEnumerator SeasonPlay()
     {
         bossClick += 5;
         GameManager.instance.bossClick = bossClick;
-        SpawnManager.SpawnBossWeather();
-        yield return new WaitForSeconds(10f);
-        
 
         for (int i = 1; i < 5; i++) // 1개월
         {
@@ -159,8 +164,13 @@ public class InGameManager : MonoBehaviour
             SpawnManager.SpawnRandomWeather();
             GameManager.instance.crruentScore++;
         }
-        month++;
 
+        yield return new WaitForSeconds(6f);
         // 시즌이 끝날때 보스 소환 추가 여기다가 @@@@@@@
+        SpawnManager.SpawnBossWeather();
+        bossHP.SetActive(true);
+        bossHpText.text = "보스출현!";
+        yield return new WaitForSeconds(8f);
+        month++;
     }
 }
