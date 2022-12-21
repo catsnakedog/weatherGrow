@@ -176,6 +176,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d17c4a79ced65a4f9809611369f3cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgmVolumeSlider: {fileID: 0}
+  sfxVolumeSlider: {fileID: 0}
 --- !u!114 &63950381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -845,9 +847,11 @@ MonoBehaviour:
   season: -1
   hp: 0
   bossClick: 0
+  nowBoss: 0
   speed: 1
   bestScore: 0
   crruentScore: 0
+  boss: {fileID: 0}
   gameState: 0
 --- !u!4 &837991969
 Transform:
@@ -1380,7 +1384,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 837991967}
+      - m_Target: {fileID: 2411619435916296306}
         m_MethodName: SetBgmVolume
         m_Mode: 1
         m_Arguments:
@@ -1561,7 +1565,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 837991967}
+      - m_Target: {fileID: 2411619435916296306}
         m_MethodName: SetSfxVolume
         m_Mode: 1
         m_Arguments:
@@ -2252,6 +2256,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d17c4a79ced65a4f9809611369f3cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgmVolumeSlider: {fileID: 1301313017}
+  sfxVolumeSlider: {fileID: 1415508231}
 --- !u!114 &2411619435916296307
 MonoBehaviour:
   m_ObjectHideFlags: 0

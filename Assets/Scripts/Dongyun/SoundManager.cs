@@ -147,11 +147,13 @@ public void GameAudioPlay()
    {
        AudioSource obj1 =   _audioSources[(int)Sound.Bgm] ;
        obj1.volume = bgmVolumeSlider.value ;
+       PlayerPrefs.SetFloat("bgmvolume",bgmVolumeSlider.value) ; 
    }
 
    public void SetSfxVolume()
    {
           AudioSource obj1 =   _audioSources[(int)Sound.Effect] ;
           obj1.volume =  sfxVolumeSlider.value ;
+           PlayerPrefs.SetFloat("sfxvolume",sfxVolumeSlider.value) ; 
    }
 }

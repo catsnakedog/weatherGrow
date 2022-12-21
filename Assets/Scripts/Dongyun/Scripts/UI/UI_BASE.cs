@@ -2,24 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 public class UI_BASE : MonoBehaviour
 {
- 
+  [SerializeField] Slider bgmVolumeSlider ;
+  
+  
+    [SerializeField] Slider sfxVolumeSlider ;
    
      //SoundManager _sound = new SoundManager() ; 
      // public AudioClip bgm ; 
     void Start()
     {
-       
-       
+       bgmVolumeSlider.value = 0.5f ;
+       sfxVolumeSlider.value = 0.5f ;
+
        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        bgmVolumeSlider.value = PlayerPrefs.GetFloat("bgmvolume") ;
+       sfxVolumeSlider.value = PlayerPrefs.GetFloat("sfxvolume") ;
     }
       
     public void ButtonSetting() // 설정팝업창 생성
@@ -49,6 +54,23 @@ public class UI_BASE : MonoBehaviour
     {
         Application.Quit() ; 
     }
+ 
+       public void SetBgmVolume()
+   {   
+       GameObject obj1 = GameObject.Find("@Sound") ; 
+       GameObject obj2 = obj1.transform.GetChild(0).gameObject ;
+       AudioSource obj3 = obj2.GetComponent<AudioSource>() ; 
+       obj3.volume = bgmVolumeSlider.value ; 
+        PlayerPrefs.SetFloat("bgmvolume",bgmVolumeSlider.value) ; 
+   }
+ 
 
-    
+   public void SetSfxVolume()
+   {
+          GameObject obj1 = GameObject.Find("@Sound") ; 
+       GameObject obj2 = obj1.transform.GetChild(1).gameObject ;
+       AudioSource obj3 = obj2.GetComponent<AudioSource>() ; 
+       obj3.volume = sfxVolumeSlider.value ; 
+         PlayerPrefs.SetFloat("sfxvolume",sfxVolumeSlider.value) ; 
+   }
 }

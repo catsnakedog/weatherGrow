@@ -2118,9 +2118,11 @@ MonoBehaviour:
   season: -1
   hp: 0
   bossClick: 0
+  nowBoss: 0
   speed: 1
   bestScore: 0
   crruentScore: 0
+  boss: {fileID: 0}
   gameState: 0
 --- !u!4 &1743877870
 Transform:
@@ -2622,6 +2624,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d17c4a79ced65a4f9809611369f3cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgmVolumeSlider: {fileID: 7351779257119284192}
+  sfxVolumeSlider: {fileID: 8307618036434328288}
 --- !u!222 &57343801557945431
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2768,7 +2772,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9077311793997307656}
+      - m_Target: {fileID: 2133029544}
         m_MethodName: ButtonClose
         m_Mode: 1
         m_Arguments:
@@ -3632,7 +3636,6 @@ GameObject:
   - component: {fileID: 4402433405795080667}
   - component: {fileID: 192472707760068822}
   - component: {fileID: 6169777010230434156}
-  - component: {fileID: 9077311793997307656}
   m_Layer: 8
   m_Name: SettingCanvas
   m_TagString: Untagged
@@ -4003,7 +4006,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1743877871}
+      - m_Target: {fileID: 2133029544}
         m_MethodName: SetBgmVolume
         m_Mode: 1
         m_Arguments:
@@ -4082,7 +4085,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1743877871}
+      - m_Target: {fileID: 2133029544}
         m_MethodName: SetSfxVolume
         m_Mode: 1
         m_Arguments:
@@ -4209,18 +4212,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: BGM
---- !u!114 &9077311793997307656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5011088077350165084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d17c4a79ced65a4f9809611369f3cab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &9110272713300658554
 GameObject:
   m_ObjectHideFlags: 0
