@@ -2148,7 +2148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81acb8ce9e6bfcc499711847f49f9dd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VolumeSlider: {fileID: 7351779257119284192}
+  bgmVolumeSlider: {fileID: 7351779257119284192}
+  sfxVolumeSlider: {fileID: 8307618036434328288}
   bgm1: {fileID: 8300000, guid: 3cc6fde633b747d41a6d058e7707f82a, type: 3}
   bgm2: {fileID: 8300000, guid: dc6d4d7947d9f6c419dc0a469b065794, type: 3}
   bgm3: {fileID: 8300000, guid: a3fa9bb9259ac9d48abedcbf96d4e4cc, type: 3}
@@ -2514,7 +2515,7 @@ GameObject:
   - component: {fileID: 2133029544}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

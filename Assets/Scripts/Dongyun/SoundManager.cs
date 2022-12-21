@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class SoundManager :MonoBehaviour 
 {
    AudioSource[] _audioSources  = new AudioSource[(int)Sound.MaxCount] ;
-   [SerializeField] Slider VolumeSlider ;
+   [SerializeField] Slider bgmVolumeSlider ;
+    [SerializeField] Slider sfxVolumeSlider ;
 
    public enum Sound
    {
@@ -146,12 +147,12 @@ public void GameAudioPlay()
    public void SetBgmVolume()
    {
        AudioSource obj1 =   _audioSources[(int)Sound.Bgm] ;
-       obj1.volume = VolumeSlider.value ;
+       obj1.volume = bgmVolumeSlider.value ;
    }
 
    public void SetSfxVolume()
    {
           AudioSource obj1 =   _audioSources[(int)Sound.Effect] ;
-          obj1.volume =  VolumeSlider.value ;
+          obj1.volume =  sfxVolumeSlider.value ;
    }
 }
