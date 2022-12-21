@@ -461,6 +461,12 @@ MonoBehaviour:
   weatherPrefabs: []
   springPrefab: {fileID: 6103452462741824909, guid: 51b2510c6b039304aad4af0f2925a871,
     type: 3}
+  summerPrefab: {fileID: 6378109550687506799, guid: 5be1b268831715b4b9baf4e4e12d36a0,
+    type: 3}
+  fallPrefab: {fileID: 5465924887533288349, guid: 5b20845a756b4e2458a03a9283767815,
+    type: 3}
+  winterPrefab: {fileID: 2857295998971425783, guid: 79d8ffe396567794eb5f9da41d5b4f90,
+    type: 3}
   spawnX: 3
   spawnY: 2.5
   startDelay: 2
