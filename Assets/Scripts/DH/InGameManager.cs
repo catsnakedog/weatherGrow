@@ -71,24 +71,6 @@ public class InGameManager : MonoBehaviour
         }
         else bestScoreText.text = (GameManager.instance.bestScore / 48).ToString() + "년 " + ((GameManager.instance.bestScore % 48) / 4).ToString() + "월 " + (GameManager.instance.bestScore % 4).ToString() + "주 ";
 
-        switch(season)
-        {
-            case 0:
-                seasonText.text = "봄";
-                return;
-            case 1:
-                seasonText.text = "여름";
-                return;
-            case 2:
-                seasonText.text = "가을";
-                return;
-            case 3:
-                seasonText.text = "겨울";
-                return;
-            default:
-                seasonText.text = "오류";
-                return;
-        }
 
         if (seasonEnd)
         {
@@ -109,6 +91,25 @@ public class InGameManager : MonoBehaviour
         if (GameManager.instance.hp < 1)
         {
             hearts[0].SetActive(false);
+        }
+
+        switch (season)
+        {
+            case 0:
+                seasonText.text = "봄";
+                return;
+            case 1:
+                seasonText.text = "여름";
+                return;
+            case 2:
+                seasonText.text = "가을";
+                return;
+            case 3:
+                seasonText.text = "겨울";
+                return;
+            default:
+                seasonText.text = "오류";
+                return;
         }
     }
 

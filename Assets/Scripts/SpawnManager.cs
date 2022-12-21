@@ -71,9 +71,15 @@ public class SpawnManager : MonoBehaviour
         {
             findObj = GameManager.instance.q.Peek();
             _findObj = findObj.GetComponent<WeatherAndBoss>();
-            if (_findObj.weather.Count ==  0 || findObj.transform.position.x < -5)
+            if (_findObj.weather.Count ==  0)
             {
                 Destroy(findObj);
+                GameManager.instance.q.Dequeue();
+            }
+            if (findObj.transform.position.x < -2.7f)
+            {
+                Destroy(findObj);
+                GameManager.instance.hp--;
                 GameManager.instance.q.Dequeue();
             }
         }
