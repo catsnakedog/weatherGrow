@@ -18,6 +18,7 @@ public class InGameManager : MonoBehaviour
     [SerializeField] private int bossClick;
     [SerializeField] private int season;
     [SerializeField] private bool seasonEnd;
+    [SerializeField] private string temp;
     private WeatherAndBoss n;
 
     [SerializeField] private List<GameObject> hearts = new List<GameObject>();
@@ -37,6 +38,16 @@ public class InGameManager : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.instance.q.Count != 0)
+        {
+            temp = "";
+            n = GameManager.instance.q.Peek().GetComponent<WeatherAndBoss>();
+            for (int j = 0; j < n.weather.Count; j++)
+            {
+                temp += n.weather[j].ToString();
+            }
+            tempText.text = temp;
+        }    
 
         if (month >= 3 && month <= 5) season = 0;
         else if (month >= 6 && month <= 8) season = 1;
@@ -83,13 +94,13 @@ public class InGameManager : MonoBehaviour
     {
         Debug.Log("test");
         StartCoroutine(SeasonPlay());
-        yield return new WaitForSeconds(18.5f);
+        yield return new WaitForSeconds(24f);
         StartCoroutine(SeasonPlay());
-        yield return new WaitForSeconds(18.5f);
+        yield return new WaitForSeconds(24f);
         StartCoroutine(SeasonPlay());
-        yield return new WaitForSeconds(18.5f);
+        yield return new WaitForSeconds(24f);
         StartCoroutine(SeasonPlay());
-        yield return new WaitForSeconds(18.5f);
+        yield return new WaitForSeconds(24f);
         seasonEnd = true;
     }
     IEnumerator SeasonPlay()
@@ -100,8 +111,6 @@ public class InGameManager : MonoBehaviour
         {
             yield return new WaitForSeconds(2f);
             SpawnManager.SpawnRandomWeather();
-            n = GameManager.instance.q.Peek().GetComponent<WeatherAndBoss>();
-            tempText.text = n.weather[0].ToString() + n.weather[1].ToString() + n.weather[2].ToString();
             GameManager.instance.crruentScore++;
         }
         month++;
@@ -110,7 +119,6 @@ public class InGameManager : MonoBehaviour
             yield return new WaitForSeconds(2f);
             SpawnManager.SpawnRandomWeather();
             n = GameManager.instance.q.Peek().GetComponent<WeatherAndBoss>();
-            tempText.text = n.weather[0].ToString() + n.weather[1].ToString() + n.weather[2].ToString();
             GameManager.instance.crruentScore++;
         }
         month++;
@@ -119,8 +127,6 @@ public class InGameManager : MonoBehaviour
             yield return new WaitForSeconds(2f);
             SpawnManager.SpawnRandomWeather();
             n = GameManager.instance.q.Peek().GetComponent<WeatherAndBoss>();
-            tempText.text = n.weather[0].ToString() + n.weather[1].ToString() + n.weather[2].ToString();
-
             GameManager.instance.crruentScore++;
         }
         month++;
