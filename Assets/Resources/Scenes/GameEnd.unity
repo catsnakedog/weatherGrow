@@ -133,7 +133,6 @@ GameObject:
   - component: {fileID: 63950383}
   - component: {fileID: 63950382}
   - component: {fileID: 63950381}
-  - component: {fileID: 63950380}
   m_Layer: 8
   m_Name: SettingCanvas
   m_TagString: Untagged
@@ -164,20 +163,6 @@ RectTransform:
   m_AnchoredPosition: {x: 540, y: 960}
   m_SizeDelta: {x: 1080, y: 1920}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &63950380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 63950378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d17c4a79ced65a4f9809611369f3cab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bgmVolumeSlider: {fileID: 0}
-  sfxVolumeSlider: {fileID: 0}
 --- !u!114 &63950381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -744,7 +729,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 63950380}
+      - m_Target: {fileID: 0}
         m_MethodName: ButtonClose
         m_Mode: 1
         m_Arguments:
