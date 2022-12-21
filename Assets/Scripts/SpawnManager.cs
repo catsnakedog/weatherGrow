@@ -9,10 +9,13 @@ public class SpawnManager : MonoBehaviour
     public GameObject summerPrefab;
     public GameObject fallPrefab;
     public GameObject winterPrefab;
+    public GameObject bossPrefab;
 
     private GameObject _obj; //생성된 인스턴스를 저장할 임시변수
     private GameObject findObj; //que의 맨앞 오브젝트를 저장할 임시변수
     private WeatherAndBoss _findObj;
+    private GameObject bossObj;
+    private Boss _bossObj;
 
     [SerializeField] private float spawnX = 3;
     [SerializeField] private float spawnY = 3;
@@ -67,21 +70,48 @@ public class SpawnManager : MonoBehaviour
 
     void UpdateController() //que의 맨앞에 있는 오브젝트를 찾아서 list가 충족되거나 바운더리 밖으로 나갔을때 파괴를 시키도록
     {
-        if (GameManager.instance.q.Count != 0)
+        if (GameManager.instance.nowBoss)
         {
-            findObj = GameManager.instance.q.Peek();
-            _findObj = findObj.GetComponent<WeatherAndBoss>();
-            if (_findObj.weather.Count ==  0)
+            _bossObj = GameManager.instance.boss.GetComponent<Boss>();
+            if (_bossObj.bossHp <= 0)
             {
-                Destroy(findObj);
-                GameManager.instance.q.Dequeue();
+                Destroy(bossObj);
+                GameManager.instance.nowBoss = false;
             }
-            if (findObj.transform.position.x < -2.7f)
+            else if (GameManager.instance.boss.transform.position.x < -5)
             {
-                Destroy(findObj);
+                Destroy(bossObj);
+                GameManager.instance.nowBoss = false;
                 GameManager.instance.hp--;
-                GameManager.instance.q.Dequeue();
             }
         }
+        else
+        {
+            if (GameManager.instance.q.Count != 0)
+            {
+                findObj = GameManager.instance.q.Peek();
+                _findObj = findObj.GetComponent<WeatherAndBoss>();
+                if (_findObj.weather.Count == 0)
+                {
+                    Destroy(findObj);
+                    GameManager.instance.q.Dequeue();
+                }
+                if (findObj.transform.position.x < -2.7f)
+                {
+                    Destroy(findObj);
+                    GameManager.instance.hp--;
+                    GameManager.instance.q.Dequeue();
+                }
+            }
+        }
+        
+    }
+
+    public void SpawnBossWeather()
+    {
+        GameManager.instance.nowBoss = true;
+        Vector3 spawnPos = new Vector3(spawnX, spawnY, 1);
+        bossObj = Instantiate(bossPrefab, spawnPos, bossPrefab.transform.rotation);
+        GameManager.instance.boss = bossObj;
     }
 }

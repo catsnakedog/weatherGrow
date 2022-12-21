@@ -135,6 +135,10 @@ public class InGameManager : MonoBehaviour
     {
         bossClick += 5;
         GameManager.instance.bossClick = bossClick;
+        SpawnManager.SpawnBossWeather();
+        yield return new WaitForSeconds(10f);
+        
+
         for (int i = 1; i < 5; i++) // 1개월
         {
             yield return new WaitForSeconds(2f);

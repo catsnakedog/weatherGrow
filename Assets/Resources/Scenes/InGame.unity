@@ -467,6 +467,8 @@ MonoBehaviour:
     type: 3}
   winterPrefab: {fileID: 2857295998971425783, guid: 79d8ffe396567794eb5f9da41d5b4f90,
     type: 3}
+  bossPrefab: {fileID: 207454740073983151, guid: c8eac6463b4754b32ad480e3174072a2,
+    type: 3}
   spawnX: 3
   spawnY: 2.5
   startDelay: 2
@@ -1716,9 +1718,11 @@ MonoBehaviour:
   season: 0
   hp: 3
   bossClick: 0
+  nowBoss: 0
   speed: 1
   bestScore: 0
   crruentScore: 0
+  boss: {fileID: 0}
   gameState: 0
 --- !u!4 &727952122
 Transform:

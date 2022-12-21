@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     public int season; // 계절 봄/여름/가을/겨울 0/1/2/3
     public int hp;
     public int bossClick;
+    public bool nowBoss;
     public float speed;
     public int bestScore;
     public int crruentScore; // n년 n개월 n주 이런식으로 점수가 저장됨 crruentScore에는 n주 형식으로 데이터가 들어감 스코어 표시할때 n주 기준으로 형태 바꿔서 나타내기
@@ -44,6 +45,7 @@ public class GameManager : MonoBehaviour
 
     #region 인게임 2
     public Queue<GameObject> q = new Queue<GameObject>();
+    public GameObject boss;
     public bool gameState = false;
 
     public Action<Button> clickedBtn;
