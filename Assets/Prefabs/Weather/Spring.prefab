@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3762390325346090051}
   - component: {fileID: 7584530221704566051}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: Spring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
-  m_MaskInteraction: 0
+  m_MaskInteraction: 1
   m_SpriteSortPoint: 0
 --- !u!114 &3762390325346090051
 MonoBehaviour:
