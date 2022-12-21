@@ -31,7 +31,7 @@ public class UI_BASE : MonoBehaviour
   
     public void ButtonClose()  // 설정 팝업 닫기
     { 
-       GameObject obj1 = GameObject.Find("Canvas");
+       GameObject obj1 =GameObject.FindWithTag("UI");
        GameObject obj2 = obj1.transform.Find("SettingCanvas").gameObject;
        obj2.SetActive(false);
     }
@@ -50,5 +50,5 @@ public class UI_BASE : MonoBehaviour
         Application.Quit() ; 
     }
 
+    
 }
- 

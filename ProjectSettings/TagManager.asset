@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - InGame
+  - UI
   layers:
   - Default
   - TransparentFX

@@ -8,23 +8,24 @@ public class TextManager : MonoBehaviour
 {   
   public Text BestScore ;
   public Text CurrentScore ;
+  private string key = "BestScore" ;
  
-    //public int bestScore;
-    //public int crruentScore;
+    
+     int _crruentscore =  GameManager.instance.crruentScore;
 
     void Start()
-    {
+    { int _bestscore = PlayerPrefs.GetInt(key)  ; 
       
-      if(GameManager.instance.bestScore <=GameManager.instance.crruentScore) 
+      if(_bestscore <=_crruentscore) 
       {
-        GameManager.instance.bestScore = GameManager.instance.crruentScore ; 
-        PlayerPrefs.SetInt("BestScore",GameManager.instance.bestScore) ;
+       _bestscore = _crruentscore ; 
+        PlayerPrefs.SetInt(key,_bestscore) ;
       }
 
       
-      int LoadScore = PlayerPrefs.GetInt("BestScore") ; 
+      int LoadScore = PlayerPrefs.GetInt(key) ; 
        BestScore.text = (LoadScore / 48).ToString() + "년 " + ((LoadScore%48) / 4).ToString() + "월 " + (LoadScore%4).ToString() + "주 "; 
-       CurrentScore.text = (GameManager.instance.crruentScore / 48).ToString() + "년 " + ((GameManager.instance.crruentScore%48) / 4).ToString() + "월 " + (GameManager.instance.crruentScore%4).ToString() + "주 ";
+       CurrentScore.text = (_crruentscore / 48).ToString() + "년 " + ((_crruentscore%48) / 4).ToString() + "월 " + (_crruentscore%4).ToString() + "주 ";
     }
   
 
