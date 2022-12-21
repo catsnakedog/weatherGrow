@@ -11,7 +11,7 @@ public class TextManager : MonoBehaviour
   private string key = "BestScore" ;
  
     
-     int _crruentscore =  GameManager.instance.crruentScore;
+    int _crruentscore =  GameManager.instance.crruentScore;
 
     void Start()
     { int _bestscore = PlayerPrefs.GetInt(key)  ; 
