@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   element: 
+  destoryObj: 0
 --- !u!114 &2799833526864084290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,8 +112,9 @@ MonoBehaviour:
   move_speed: 0
   weather: 090000000900000009000000
   bossImages:
-  - {fileID: 21300000, guid: 053188e481f2b40d1897d02f942eadc8, type: 3}
-  - {fileID: 21300000, guid: 053188e481f2b40d1897d02f942eadc8, type: 3}
-  - {fileID: 21300000, guid: 053188e481f2b40d1897d02f942eadc8, type: 3}
-  - {fileID: 21300000, guid: 053188e481f2b40d1897d02f942eadc8, type: 3}
+  - {fileID: -1651354451150879677, guid: 456e2f81e97a04249b628f55a5810395, type: 3}
+  - {fileID: 7262239797654621961, guid: 11a4d93ec1cfbca49a63c0dded4be0d6, type: 3}
+  - {fileID: 5347854984929822312, guid: 79d83e59d3f637b4a93add1d27358382, type: 3}
+  - {fileID: 3247746522235079593, guid: 55da248bc08f4c34ea98b212026f5334, type: 3}
   bossHp: 0
+  HPPoint: {fileID: 0}
