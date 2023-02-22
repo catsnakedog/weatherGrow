@@ -30,14 +30,13 @@ public class UI_BASE : MonoBehaviour
     public void ButtonSetting() // 설정팝업창 생성
     {   
         //GameObject root = GameObject.Find("SettingCanavas");
-       GameObject obj1 = transform.Find("SettingCanvas").gameObject;
+       GameObject obj1 = transform.Find("Setting").gameObject;
        obj1.SetActive(true);
     }
   
     public void ButtonClose()  // 설정 팝업 닫기
     { 
-       GameObject obj1 =GameObject.FindWithTag("UI");
-       GameObject obj2 = obj1.transform.Find("SettingCanvas").gameObject;
+       GameObject obj2 = transform.Find("Setting").gameObject;
        obj2.SetActive(false);
     }
       
