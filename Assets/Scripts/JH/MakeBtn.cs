@@ -58,6 +58,7 @@ public class MakeBtn : MonoBehaviour
     //버튼이 눌렸을 때 실행될 함수
     public void Onclickbtn1()
     {
+         GameManager.Sound.Play("SFX/2_ButtonClick") ;
         if (GameManager.instance.nowBoss)
         {
             CheckAnsBoss();
@@ -88,7 +89,7 @@ public class MakeBtn : MonoBehaviour
         }
     }
     public void Onclickbtn2()
-    {
+    {    GameManager.Sound.Play("SFX/2_ButtonClick") ;
         if (GameManager.instance.nowBoss)
         {
             CheckAnsBoss();
@@ -119,7 +120,7 @@ public class MakeBtn : MonoBehaviour
 
     }
     public void Onclickbtn3()
-    {
+    {     GameManager.Sound.Play("SFX/2_ButtonClick") ;
         if (GameManager.instance.nowBoss)
         {
             CheckAnsBoss();
@@ -150,7 +151,7 @@ public class MakeBtn : MonoBehaviour
 
     }
     public void Onclickbtn4()
-    {
+    {      GameManager.Sound.Play("SFX/2_ButtonClick") ;
         if (GameManager.instance.nowBoss)
         {
             CheckAnsBoss();

@@ -10,6 +10,9 @@ public class InGameManager : MonoBehaviour
 {
     SpawnManager SpawnManager;
 
+
+    
+
     [SerializeField] private GameObject bossHP;
     [SerializeField] private Text bossHpText;
     [SerializeField] private Text bestScoreText;

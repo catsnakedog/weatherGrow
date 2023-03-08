@@ -8,6 +8,11 @@ public class GameManager : MonoBehaviour
 {
     //싱글톤
     public static GameManager instance;
+    SoundManager _sound =  new SoundManager();
+    ResourceManager _resource = new ResourceManager();
+     public static SoundManager Sound { get { return instance._sound; } }
+     
+    public static ResourceManager Resource { get { return instance._resource; } }
     private void Awake()
     {
         if (instance == null)
@@ -20,6 +25,7 @@ public class GameManager : MonoBehaviour
             if (instance != this)
                 Destroy(this.gameObject);
         }
+        _sound.Init() ;
 
     }
 

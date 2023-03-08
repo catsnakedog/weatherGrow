@@ -176,6 +176,7 @@ GameObject:
   - component: {fileID: 122239907}
   - component: {fileID: 122239906}
   - component: {fileID: 122239908}
+  - component: {fileID: 122239909}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: InGame
@@ -280,6 +281,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Gameover: {fileID: 1596380549}
+--- !u!114 &122239909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122239903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3c511256ffba7040a423e59dd0e8700, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tmp: -1
 --- !u!1 &141002831
 GameObject:
   m_ObjectHideFlags: 0
@@ -2413,6 +2427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bgmVolumeSlider: {fileID: 2109486171267190945}
+  SettingCanvas: {fileID: 0}
   sfxVolumeSlider: {fileID: 579333371388170657}
 --- !u!1 &1362915261
 GameObject:

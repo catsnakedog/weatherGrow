@@ -7,7 +7,7 @@ public class UI_BASE : MonoBehaviour
 {
   [SerializeField] Slider bgmVolumeSlider ;
   
-  
+  public GameObject SettingCanvas ;
     [SerializeField] Slider sfxVolumeSlider ;
    
      //SoundManager _sound = new SoundManager() ; 
@@ -29,15 +29,14 @@ public class UI_BASE : MonoBehaviour
       
     public void ButtonSetting() // 설정팝업창 생성
     {   
-        //GameObject root = GameObject.Find("SettingCanavas");
-       GameObject obj1 = transform.Find("Setting").gameObject;
-       obj1.SetActive(true);
+       GameManager.Sound.Play("SFX/1_ButtonClick") ;
+       SettingCanvas.SetActive(true);
     }
   
     public void ButtonClose()  // 설정 팝업 닫기
     { 
-       GameObject obj2 = transform.Find("Setting").gameObject;
-       obj2.SetActive(false);
+       GameManager.Sound.Play("SFX/1_ButtonClick") ;
+       SettingCanvas.SetActive(false);
     }
       
     public void MenuSceneChange() // 메뉴로 돌아가는 함수

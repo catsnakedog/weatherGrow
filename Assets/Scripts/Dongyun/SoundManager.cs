@@ -3,157 +3,103 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 // 사용법
-public class SoundManager :MonoBehaviour 
+
+public class SoundManager
 {
-   AudioSource[] _audioSources  = new AudioSource[(int)Sound.MaxCount] ;
-   [SerializeField] Slider bgmVolumeSlider ;
-    [SerializeField] Slider sfxVolumeSlider ;
+    AudioSource[] _audioSources = new AudioSource[(int)Define.Sound.MaxCount];
+    Dictionary<string, AudioClip> _audioClips = new Dictionary<string, AudioClip>();
 
-   public enum Sound
-   {
-      Bgm,
-      Effect,
-    MaxCount,
+    // MP3 Player   -> AudioSource
+    // MP3 음원     -> AudioClip
+    // 관객(귀)     -> AudioListener
 
-   }
-
-  void Start()
-   {
-        Init() ; 
-
-   }
-
- void Update()
- {
-   SeasonChangeSensor() ; 
- }
-   
-   public void Init()
-   {
-     GameObject root = GameObject.Find("Sound");
-     if(root == null)
-     {
-        root = new GameObject{name = "@Sound"} ; 
-        Object.DontDestroyOnLoad(root) ; 
-        string[ ] soundNames  = System.Enum.GetNames(typeof(Sound)) ;  // Define의 사운드목록 추출
-        for(int i =0 ; i < soundNames.Length-1; i ++ ) 
+    public void Init()
+    {
+        GameObject root = GameObject.Find("@Sound");
+        if (root == null)
         {
-           GameObject go =   new GameObject{name = soundNames[i]} ; 
-           _audioSources[i] = go.AddComponent<AudioSource>() ; 
-           
-           go.transform.parent = root.transform ; 
+            root = new GameObject { name = "@Sound" };
+            Object.DontDestroyOnLoad(root);
+
+            string[] soundNames = System.Enum.GetNames(typeof(Define.Sound));
+            for (int i = 0; i < soundNames.Length - 1; i++)
+            {
+                GameObject go = new GameObject { name = soundNames[i] };
+                _audioSources[i] = go.AddComponent<AudioSource>();
+                go.transform.parent = root.transform;
+            }
+
+            _audioSources[(int)Define.Sound.Bgm].loop = true;
         }
+    }
 
-        _audioSources[(int)Sound.Bgm].loop = true ; 
-       
-     }
-   }
-public AudioClip bgm1 ;
-public AudioClip bgm2 ;
-public AudioClip bgm3 ;
-public AudioClip bgm4 ;
-public AudioClip bgm5 ;
-    
- 
-  int SeasonValue;
+    public void Clear()
+    {
+        foreach (AudioSource audioSource in _audioSources)
+        {
+            audioSource.clip = null;
+            audioSource.Stop();
+        }
+        _audioClips.Clear();
+    }
+
+    public void Play(string path, Define.Sound type = Define.Sound.Effect, float pitch = 1.0f)
+    {
+        AudioClip audioClip = GetOrAddAudioClip(path, type);
+        Play(audioClip, type, pitch);
+    }
+
+	public void Play(AudioClip audioClip, Define.Sound type = Define.Sound.Effect, float pitch = 1.0f)
+	{
+        if (audioClip == null)
+            return;
+
+		if (type == Define.Sound.Bgm)
+		{
+			AudioSource audioSource = _audioSources[(int)Define.Sound.Bgm];
+			if (audioSource.isPlaying)
+				audioSource.Stop();
+
+			audioSource.pitch = pitch;
+			audioSource.clip = audioClip;
+			audioSource.Play();
+		}
+		else
+		{
+			AudioSource audioSource = _audioSources[(int)Define.Sound.Effect];
+			audioSource.pitch = pitch;
+			audioSource.PlayOneShot(audioClip);
+		}
+	}
+
+	AudioClip GetOrAddAudioClip(string path, Define.Sound type = Define.Sound.Effect)
+    {
+		if (path.Contains("Sounds/") == false)
+			path = $"Sounds/{path}";
+
+		AudioClip audioClip = null;
+
+		if (type == Define.Sound.Bgm)
+		{
+			audioClip = GameManager.Resource.Load<AudioClip>(path);
+		}
+		else
+		{
+			if (_audioClips.TryGetValue(path, out audioClip) == false)
+			{
+				audioClip = GameManager.Resource.Load<AudioClip>(path);
+				_audioClips.Add(path, audioClip);
+			}
+		}
+
+		if (audioClip == null)
+			Debug.Log($"AudioClip Missing ! {path}");
+
+		return audioClip;
+    }
+
      
-   int tmp;
-    public void  SeasonChangeSensor()
-{
-     SeasonValue = GameManager.instance.season;
-     if(SeasonValue!=tmp)
-     {
-         GameAudioPlay();
-     }
-  
-   tmp = SeasonValue ; 
+}
+
+
  
-  
-}
-public void GameAudioPlay()
-{   
-   if(GameManager. instance.season == -1)
-   { 
-     Play(bgm1,Sound.Bgm) ; 
-
-   }
-  
-    if(GameManager. instance.season == 0)
-   { 
-     Play(bgm2,Sound.Bgm) ; 
-
-   }
-     if(GameManager. instance.season == 1)
-   { 
-     Play(bgm3,Sound.Bgm) ; 
-
-   }
-     if(GameManager. instance.season == 2)
-   { 
-     Play(bgm4,Sound.Bgm) ; 
-
-   
-     if(GameManager. instance.season == 3)
-   { 
-     Play(bgm5,Sound.Bgm) ; 
-
-   }}
-}
-
-
-
-   public void Play(  AudioClip audioClip,Sound type= Sound.Effect,float pitch = 1.0f)  // 오디오 클립을 퍼블릭으로 받는 버전
-   {
-
-       if(audioClip == null) return ; 
-       if(type == Sound.Bgm)
-       {
-    
-             if(audioClip == null)
-             {
-                Debug.Log("AudioClip missing!") ;
-                return ;
-             }
-             AudioSource audioSource = _audioSources[(int)Sound.Bgm] ; 
-             if(audioSource.isPlaying) audioSource.Stop() ; //만약 다른비지엠이 재생중이라면 정지
-            audioSource.pitch = pitch ; 
-            audioSource.clip = audioClip ; 
-            //CurBgm.clip = audioSource.clip  ; 
-            audioSource.Play() ; 
-
-
-       }
-
-
-
-       
-       else
-       {
-           
-             if(audioClip == null)
-             {
-                Debug.Log("AudioClip missing!") ;
-                return ;
-             }
-            AudioSource audioSource = _audioSources[(int)Sound.Effect] ; 
-            audioSource.pitch = pitch ; 
-           // CurSfx.clip = audioSource.clip ; 
-            audioSource.PlayOneShot(audioClip) ; 
-            
-       }
-   }
-
-   public void SetBgmVolume()
-   {
-       AudioSource obj1 =   _audioSources[(int)Sound.Bgm] ;
-       obj1.volume = bgmVolumeSlider.value ;
-       PlayerPrefs.SetFloat("bgmvolume",bgmVolumeSlider.value) ; 
-   }
-
-   public void SetSfxVolume()
-   {
-          AudioSource obj1 =   _audioSources[(int)Sound.Effect] ;
-          obj1.volume =  sfxVolumeSlider.value ;
-           PlayerPrefs.SetFloat("sfxvolume",sfxVolumeSlider.value) ; 
-   }
-}
