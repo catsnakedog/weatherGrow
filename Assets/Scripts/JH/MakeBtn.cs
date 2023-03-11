@@ -58,7 +58,7 @@ public class MakeBtn : MonoBehaviour
     //버튼이 눌렸을 때 실행될 함수
     public void Onclickbtn1()
     {
-         GameManager.Sound.Play("SFX/4_WeatherClick") ;
+         GameManager.Sound.Play("SFX/2_ButtonClick") ;
         if (GameManager.instance.nowBoss)
         {
             CheckAnsBoss();
