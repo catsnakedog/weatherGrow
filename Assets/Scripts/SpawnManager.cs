@@ -76,12 +76,18 @@ public class SpawnManager : MonoBehaviour
         {   
             _bossObj = GameManager.instance.boss.GetComponent<Boss>();
             if (_bossObj.bossHp <= 0)
-            {  GameManager.Sound.Play("SFX/12_Success") ;
+            {   AudioSource audioSource = GameManager.Sound. _audioSources[(int)Define.Sound.Effect]; 
+                if(audioSource.isPlaying) audioSource.Stop( ) ;
+            
+                 GameManager.Sound.Play("SFX/12_Success") ;
                 Destroy(bossObj);
                 GameManager.instance.nowBoss = false;
             }
             else if (GameManager.instance.boss.transform.position.x < -5)
-            {  GameManager.Sound.Play("SFX/13_Fail") ;
+            {    AudioSource audioSource = GameManager.Sound. _audioSources[(int)Define.Sound.Effect]; 
+                if(audioSource.isPlaying) audioSource.Stop( ) ;
+                
+                GameManager.Sound.Play("SFX/13_Fail") ;
                 Destroy(bossObj);
                 GameManager.instance.nowBoss = false;
                 GameManager.instance.hp--;
