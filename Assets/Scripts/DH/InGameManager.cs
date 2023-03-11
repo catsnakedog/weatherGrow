@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
@@ -75,12 +76,12 @@ public class InGameManager : MonoBehaviour
         }
 
         GameManager.instance.season = season;
-        scoreText.text = (GameManager.instance.crruentScore / 48).ToString() + "년 " + ((GameManager.instance.crruentScore%48) / 4).ToString() + "월 " + (GameManager.instance.crruentScore%4).ToString() + "주 ";
+        scoreText.text = (GameManager.instance.crruentScore / 48).ToString() + "년 " + ((GameManager.instance.crruentScore%48) / 4).ToString() + "개월 " + (GameManager.instance.crruentScore%4).ToString() + "주 ";
         if (GameManager.instance.bestScore == 0)
         {
             bestScoreText.text = "아직없음!";
         }
-        else bestScoreText.text = (GameManager.instance.bestScore / 48).ToString() + "년 " + ((GameManager.instance.bestScore % 48) / 4).ToString() + "월 " + (GameManager.instance.bestScore % 4).ToString() + "주 ";
+        else bestScoreText.text = (GameManager.instance.bestScore / 48).ToString() + "년 " + ((GameManager.instance.bestScore % 48) / 4).ToString() + "개월 " + (GameManager.instance.bestScore % 4).ToString() + "주 ";
 
 
         if (seasonEnd)
@@ -183,5 +184,15 @@ public class InGameManager : MonoBehaviour
     public void GameEnd()
     {
         Application.Quit();
+    }
+    
+    public void ReStart()
+    {
+        SceneManager.LoadScene("InGame");
+    }
+
+    public void GoMain()
+    {
+        SceneManager.LoadScene("StartScene");
     }
 }
