@@ -29,7 +29,7 @@ public class StartManager : MonoBehaviour
     public void HowToPlayImageChange()
     {
         HowToPlayImage.sprite = ImageList[ImageCount-1];
-
+      GameManager.Sound.Play("SFX/2_ButtonClick") ;
         if(ImageCount == 1)
         {
             Left.SetActive(false);
