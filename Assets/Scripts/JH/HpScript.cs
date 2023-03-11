@@ -10,6 +10,10 @@ public class HpScript : MonoBehaviour
     public GameObject Gameover;
     public Text crruentScoretext;
     public Text bestScoretext;
+
+     private string key = "BestScore" ;
+
+       int _crruentscore =  GameManager.instance.crruentScore;
     [SerializeField] private GameObject gameoverPanel;
     bool check;
 
@@ -17,6 +21,7 @@ public class HpScript : MonoBehaviour
     {
         GameManager.instance.hp = Maxhp;
         check = false;
+   
     }
 
     void Update()
@@ -38,7 +43,14 @@ public class HpScript : MonoBehaviour
         Debug.Log("dd");
         GameManager.instance.q.Clear();
         Time.timeScale = 0;
+          if(GameManager.instance.bestScore <=GameManager.instance.crruentScore) 
+      {
+            GameManager.instance.bestScore = GameManager.instance.crruentScore ;
+        PlayerPrefs.SetInt(key,GameManager.instance.bestScore) ;
+      }
+
         yield return new WaitForSecondsRealtime(1f);
+
         gameoverPanel.SetActive(true);
         crruentScoretext.text = (GameManager.instance.crruentScore / 48).ToString() + "년 " + ((GameManager.instance.crruentScore % 48) / 4).ToString() + "개월 " + (GameManager.instance.crruentScore % 4).ToString() + "주의\n" + "날씨를 만들었어!";
         bestScoretext.text = (GameManager.instance.bestScore / 48).ToString() + "년 " + ((GameManager.instance.bestScore % 48) / 4).ToString() + "개월 " + (GameManager.instance.bestScore % 4).ToString() + "주 ";

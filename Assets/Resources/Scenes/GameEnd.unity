@@ -2264,7 +2264,6 @@ GameObject:
   - component: {fileID: 2411619435916296311}
   - component: {fileID: 2411619435916296310}
   - component: {fileID: 2411619435916296306}
-  - component: {fileID: 2411619435916296307}
   - component: {fileID: 2411619435916296312}
   m_Layer: 5
   m_Name: GameOverMenu
@@ -2287,21 +2286,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgmVolumeSlider: {fileID: 1301313017}
   SettingCanvas: {fileID: 63950378}
+  Credit: {fileID: 0}
   sfxVolumeSlider: {fileID: 1415508231}
---- !u!114 &2411619435916296307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2411619435916296305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3e6f0aa5a2996541b671b3f6ec5c602, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BestScore: {fileID: 2411619437894044084}
-  CurrentScore: {fileID: 2411619436999173702}
 --- !u!223 &2411619435916296308
 Canvas:
   m_ObjectHideFlags: 0
