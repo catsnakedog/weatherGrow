@@ -76,12 +76,18 @@ public class SpawnManager : MonoBehaviour
         {   
             _bossObj = GameManager.instance.boss.GetComponent<Boss>();
             if (_bossObj.bossHp <= 0)
-            {  GameManager.Sound.Play("SFX/12_Success") ;
+            {   AudioSource audioSource = GameManager.Sound. _audioSources[(int)Define.Sound.Effect]; 
+                if(audioSource.isPlaying) audioSource.Stop( ) ;
+            
+                 GameManager.Sound.Play("SFX/12_Success") ;
                 Destroy(bossObj);
                 GameManager.instance.nowBoss = false;
             }
             else if (GameManager.instance.boss.transform.position.x < -5)
-            {  GameManager.Sound.Play("SFX/13_Fail") ;
+            {    AudioSource audioSource = GameManager.Sound. _audioSources[(int)Define.Sound.Effect]; 
+                if(audioSource.isPlaying) audioSource.Stop( ) ;
+                
+                GameManager.Sound.Play("SFX/13_Fail") ;
                 Destroy(bossObj);
                 GameManager.instance.nowBoss = false;
                 GameManager.instance.hp--;
@@ -121,5 +127,12 @@ public class SpawnManager : MonoBehaviour
         Vector3 spawnPos = new Vector3(spawnX, spawnY, 1);
         bossObj = Instantiate(bossPrefab, spawnPos, bossPrefab.transform.rotation);
         GameManager.instance.boss = bossObj;
+         if (GameManager.instance.season == 0)  GameManager.Sound.Play("SFX/8_YellowDust") ;
+        else if (GameManager.instance.season == 1) GameManager.Sound.Play("SFX/9_HeavyRain") ;
+         else if (GameManager.instance.season == 2) GameManager.Sound.Play("SFX/10_Typhoon") ;
+         else if (GameManager.instance.season == 3) GameManager.Sound.Play("SFX/11_HeavySnow") ;
+        
+            
+        
     }
 }
