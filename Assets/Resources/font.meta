@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Resources/font.meta
 guid: aa5aab1741d500f4ab4a3d68281d176a
+========
+guid: 79fed16b1ccf56f4c852fa16762cd17b
+>>>>>>>> f4d1f1bb2837299237191c5f1a74da2be26efc3a:Assets/Scripts/Dongyun/Scripts/Managers.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
