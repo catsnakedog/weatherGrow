@@ -18,7 +18,7 @@ public class SpawnManager : MonoBehaviour
     private Boss _bossObj;
 
     [SerializeField] private float spawnX = 3;
-    [SerializeField] private float spawnY = 3;
+    [SerializeField] private float spawnY = 2f;
     [SerializeField] private float startDelay = 2;
     [SerializeField] private float spawnInterval = 1.5f;
 
