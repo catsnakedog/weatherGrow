@@ -188,10 +188,15 @@ public class MakeBtn : MonoBehaviour
         {
             n = GameManager.instance.q.Peek().GetComponent<WeatherAndBoss>();
             if (n.weather.Contains(1))
-            {
+            { 
+                GameManager.Sound.Play("SFX/5_WeatherRight") ;
                 n.weather.Remove(1);
             }
-            else if (!n.weather.Contains(1)) GameManager.instance.hp--;
+            else if (!n.weather.Contains(1))
+            {
+                 GameManager.Sound.Play("SFX/6_WeatherWrong") ;
+                GameManager.instance.hp--;
+            } 
             else if (n.weather == null) return;
         }
 
@@ -202,11 +207,14 @@ public class MakeBtn : MonoBehaviour
         {
             n = GameManager.instance.q.Peek().GetComponent<WeatherAndBoss>();
             if (n.weather.Contains(2))
-            {
+            {  GameManager.Sound.Play("SFX/5_WeatherRight") ;
                 n.weather.Remove(2);
                 Debug.Log("클릭된 횟수");
             }
-            else if (!n.weather.Contains(2)) GameManager.instance.hp--;
+            else if (!n.weather.Contains(2)) 
+            {   GameManager.Sound.Play("SFX/6_WeatherWrong") ;
+                GameManager.instance.hp--;
+            }
             else if (n.weather == null) return;
         }
 
@@ -217,10 +225,14 @@ public class MakeBtn : MonoBehaviour
         {
             n = GameManager.instance.q.Peek().GetComponent<WeatherAndBoss>();
             if (n.weather.Contains(3))
-            {
+            { GameManager.Sound.Play("SFX/5_WeatherRight") ;
                 n.weather.Remove(3);
             }
-            else if (!n.weather.Contains(3)) GameManager.instance.hp--;
+            else if (!n.weather.Contains(3))
+            {
+                 GameManager.Sound.Play("SFX/6_WeatherWrong") ;
+                 GameManager.instance.hp--;
+            } 
             else if (n.weather == null) return;
         }
     }
@@ -230,10 +242,13 @@ public class MakeBtn : MonoBehaviour
         {
             n = GameManager.instance.q.Peek().GetComponent<WeatherAndBoss>();
             if (n.weather.Contains(4))
-            {
+            {  GameManager.Sound.Play("SFX/5_WeatherRight") ;
                 n.weather.Remove(4);
             }
-            else if (!n.weather.Contains(4)) GameManager.instance.hp--;
+            else if (!n.weather.Contains(4))
+            {       GameManager.Sound.Play("SFX/6_WeatherWrong") ;
+                   GameManager.instance.hp--;
+            }
             else if (n.weather == null) return;
         }
     }
@@ -244,10 +259,13 @@ public class MakeBtn : MonoBehaviour
         {
             n = GameManager.instance.q.Peek().GetComponent<WeatherAndBoss>();
             if (n.weather.Contains(5))
-            {
+            {  GameManager.Sound.Play("SFX/5_WeatherRight") ;
                 n.weather.Remove(5);
             }
-            else if (!n.weather.Contains(5)) GameManager.instance.hp--;
+            else if (!n.weather.Contains(5))
+            {    GameManager.Sound.Play("SFX/6_WeatherWrong") ;
+               GameManager.instance.hp--;
+            }
             else if (n.weather == null) return;
         }
     }
@@ -257,16 +275,19 @@ public class MakeBtn : MonoBehaviour
         {
             n = GameManager.instance.q.Peek().GetComponent<WeatherAndBoss>();
             if (n.weather.Contains(6))
-            {
+            {  GameManager.Sound.Play("SFX/5_WeatherRight") ;
                 n.weather.Remove(6);
             }
-            else if (!n.weather.Contains(6)) GameManager.instance.hp--;
+            else if (!n.weather.Contains(6))
+            {         GameManager.Sound.Play("SFX/6_WeatherWrong") ;
+                     GameManager.instance.hp--;
+            }
             else if (n.weather == null) return;
         }
     }
 
     private void CheckAnsBoss()
-    {
+    {   GameManager.Sound.Play("SFX/7_Hit") ;
         bossn = GameManager.instance.boss.GetComponent<Boss>();
         bossn.bossHp--;
     }

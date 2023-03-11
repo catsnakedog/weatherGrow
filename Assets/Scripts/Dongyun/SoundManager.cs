@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class SoundManager
 {
-    AudioSource[] _audioSources = new AudioSource[(int)Define.Sound.MaxCount];
+    public AudioSource[] _audioSources = new AudioSource[(int)Define.Sound.MaxCount];
     Dictionary<string, AudioClip> _audioClips = new Dictionary<string, AudioClip>();
 
     // MP3 Player   -> AudioSource

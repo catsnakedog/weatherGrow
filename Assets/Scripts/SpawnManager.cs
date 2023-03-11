@@ -18,7 +18,7 @@ public class SpawnManager : MonoBehaviour
     private Boss _bossObj;
 
     [SerializeField] private float spawnX = 3;
-    [SerializeField] private float spawnY = 3;
+    [SerializeField] private float spawnY = 2f;
     [SerializeField] private float startDelay = 2;
     [SerializeField] private float spawnInterval = 1.5f;
 
@@ -73,15 +73,21 @@ public class SpawnManager : MonoBehaviour
     void UpdateController() //que의 맨앞에 있는 오브젝트를 찾아서 list가 충족되거나 바운더리 밖으로 나갔을때 파괴를 시키도록
     {
         if (GameManager.instance.nowBoss)
-        {
+        {   
             _bossObj = GameManager.instance.boss.GetComponent<Boss>();
             if (_bossObj.bossHp <= 0)
-            {
+            {   AudioSource audioSource = GameManager.Sound. _audioSources[(int)Define.Sound.Effect]; 
+                if(audioSource.isPlaying) audioSource.Stop( ) ;
+            
+                 GameManager.Sound.Play("SFX/12_Success") ;
                 Destroy(bossObj);
                 GameManager.instance.nowBoss = false;
             }
             else if (GameManager.instance.boss.transform.position.x < -5)
-            {
+            {    AudioSource audioSource = GameManager.Sound. _audioSources[(int)Define.Sound.Effect]; 
+                if(audioSource.isPlaying) audioSource.Stop( ) ;
+                
+                GameManager.Sound.Play("SFX/13_Fail") ;
                 Destroy(bossObj);
                 GameManager.instance.nowBoss = false;
                 GameManager.instance.hp--;
@@ -121,5 +127,12 @@ public class SpawnManager : MonoBehaviour
         Vector3 spawnPos = new Vector3(spawnX, spawnY, 1);
         bossObj = Instantiate(bossPrefab, spawnPos, bossPrefab.transform.rotation);
         GameManager.instance.boss = bossObj;
+         if (GameManager.instance.season == 0)  GameManager.Sound.Play("SFX/8_YellowDust") ;
+        else if (GameManager.instance.season == 1) GameManager.Sound.Play("SFX/9_HeavyRain") ;
+         else if (GameManager.instance.season == 2) GameManager.Sound.Play("SFX/10_Typhoon") ;
+         else if (GameManager.instance.season == 3) GameManager.Sound.Play("SFX/11_HeavySnow") ;
+        
+            
+        
     }
 }

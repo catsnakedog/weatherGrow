@@ -8,6 +8,7 @@ public class UI_BASE : MonoBehaviour
   [SerializeField] Slider bgmVolumeSlider ;
   
   public GameObject SettingCanvas ;
+  public GameObject Credit ;
     [SerializeField] Slider sfxVolumeSlider ;
    
      //SoundManager _sound = new SoundManager() ; 
@@ -32,6 +33,14 @@ public class UI_BASE : MonoBehaviour
        GameManager.Sound.Play("SFX/1_ButtonClick") ;
        SettingCanvas.SetActive(true);
     }
+
+     public void CreditSetting() // 설정팝업창 생성
+    {   
+       GameManager.Sound.Play("SFX/1_ButtonClick") ;
+       if(Credit.activeSelf ) Credit.SetActive(false);
+       else Credit.SetActive(true);
+    
+    }
   
     public void ButtonClose()  // 설정 팝업 닫기
     { 
@@ -40,17 +49,22 @@ public class UI_BASE : MonoBehaviour
     }
       
     public void MenuSceneChange() // 메뉴로 돌아가는 함수
-    {
+    {  
+      GameManager.Sound.Play("SFX/2_ButtonClick") ;
         SceneManager.LoadScene("StartScene") ; 
     }
     public void GameSceneChange()  // 인게임으로 돌아가는함수
-    {
+    {  GameManager.Sound.Play("SFX/2_ButtonClick") ;
         SceneManager.LoadScene(  "InGame"    ) ;
     }
 
     public void GameQuit()  // 게임종료 함수
-    {
+    {  GameManager.Sound.Play("SFX/2_ButtonClick") ;
         Application.Quit() ; 
+    }
+    public void btnclicksound()
+    {
+      GameManager.Sound.Play("SFX/2_ButtonClick") ;
     }
  
        public void SetBgmVolume()
