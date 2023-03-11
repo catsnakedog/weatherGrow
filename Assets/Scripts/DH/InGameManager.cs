@@ -181,4 +181,9 @@ public class InGameManager : MonoBehaviour
         yield return new WaitForSeconds(8f);
         month++;
     }
+
+    public void GameEnd()
+    {
+        Application.Quit();
+    }
 }
