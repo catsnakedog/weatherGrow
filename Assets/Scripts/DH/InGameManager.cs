@@ -61,7 +61,6 @@ public class InGameManager : MonoBehaviour
         if (GameManager.instance.boss == null)
         {
             bossHP.SetActive(false);
-            bossHpText.text = "보스없음";
         }
 
         if (month >= 3 && month <= 5) season = 0;
@@ -177,7 +176,6 @@ public class InGameManager : MonoBehaviour
         // 시즌이 끝날때 보스 소환 추가 여기다가 @@@@@@@
         SpawnManager.SpawnBossWeather();
         bossHP.SetActive(true);
-        bossHpText.text = "보스출현!";
         yield return new WaitForSeconds(8f);
         month++;
     }
