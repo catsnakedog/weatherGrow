@@ -40,6 +40,7 @@ public class InGameManager : MonoBehaviour
         year = 1;
         month = 3;
         bossClick = 10;
+        Time.timeScale = 1f;
         GameManager.instance.crruentScore = year*48 + month*4;
         seasonEnd = false;
         GameManager.instance.bossClick = bossClick;
