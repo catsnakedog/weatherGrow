@@ -1643,9 +1643,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2020586677}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 2133029544}
+        m_MethodName: CreditSetting
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2464,9 +2464,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2020586677}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 2133029544}
+        m_MethodName: CreditSetting
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5291,6 +5291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgmVolumeSlider: {fileID: 2020513334}
   SettingCanvas: {fileID: 305968288}
+  Credit: {fileID: 2020586677}
   sfxVolumeSlider: {fileID: 1179954487}
 --- !u!1 &3148415156415631034
 GameObject:

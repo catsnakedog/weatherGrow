@@ -615,6 +615,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1287392070}
+        m_MethodName: btnclicksound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &199909671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2235,8 +2246,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f8e49bd44ad902498281d1afa349b06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wait: {fileID: 0}
-  waitSeconds: {fileID: 0}
+  wait: {fileID: 1182421958}
+  waitSeconds: {fileID: 610345477}
 --- !u!1 &973696539
 GameObject:
   m_ObjectHideFlags: 0
@@ -2708,7 +2719,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bgmVolumeSlider: {fileID: 2109486171267190945}
-  SettingCanvas: {fileID: 0}
+  SettingCanvas: {fileID: 1395017283}
+  Credit: {fileID: 0}
   sfxVolumeSlider: {fileID: 579333371388170657}
 --- !u!1 &1347386429
 GameObject:
@@ -5197,6 +5209,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1287392070}
         m_MethodName: ButtonClose
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 957519084}
+        m_MethodName: resumeBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
