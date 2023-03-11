@@ -11,8 +11,8 @@ public class InGameManager : MonoBehaviour
     SpawnManager SpawnManager;
 
 
-    
 
+    [SerializeField] private GameObject BGObject;
     [SerializeField] private GameObject bossHP;
     [SerializeField] private Text bossHpText;
     [SerializeField] private Text bestScoreText;
@@ -28,6 +28,7 @@ public class InGameManager : MonoBehaviour
     [SerializeField] private string temp;
     private WeatherAndBoss n;
 
+    [SerializeField] private List<Sprite> BG = new List<Sprite>();
     [SerializeField] private List<GameObject> hearts = new List<GameObject>();
 
     void Start()
@@ -108,15 +109,19 @@ public class InGameManager : MonoBehaviour
         {
             case 0:
                 seasonText.text = "봄";
+                BGObject.GetComponent<Image>().sprite = BG[0];
                 return;
             case 1:
                 seasonText.text = "여름";
+                BGObject.GetComponent<Image>().sprite = BG[1];
                 return;
             case 2:
                 seasonText.text = "가을";
+                BGObject.GetComponent<Image>().sprite = BG[2];
                 return;
             case 3:
                 seasonText.text = "겨울";
+                BGObject.GetComponent<Image>().sprite = BG[3];
                 return;
             default:
                 seasonText.text = "오류";
