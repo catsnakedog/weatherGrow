@@ -121,5 +121,12 @@ public class SpawnManager : MonoBehaviour
         Vector3 spawnPos = new Vector3(spawnX, spawnY, 1);
         bossObj = Instantiate(bossPrefab, spawnPos, bossPrefab.transform.rotation);
         GameManager.instance.boss = bossObj;
+         if (GameManager.instance.season == 0)  GameManager.Sound.Play("SFX/8_YellowDust") ;
+        else if (GameManager.instance.season == 1) GameManager.Sound.Play("SFX/9_HeavyRain") ;
+         else if (GameManager.instance.season == 2) GameManager.Sound.Play("SFX/10_Typhoon") ;
+         else if (GameManager.instance.season == 3) GameManager.Sound.Play("SFX/11_HeavySnow") ;
+        
+            
+        
     }
 }
