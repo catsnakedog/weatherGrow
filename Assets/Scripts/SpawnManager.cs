@@ -101,6 +101,7 @@ public class SpawnManager : MonoBehaviour
                 _findObj = findObj.GetComponent<WeatherAndBoss>();
                 if (_findObj.weather.Count == 0)
                 {
+                    GameManager.instance.select.Clear();
                     Color color = findObj.GetComponent<SpriteRenderer>().color;
                     color.a = 0.5f;
                     findObj.GetComponent<SpriteRenderer>().color = color;
@@ -109,6 +110,7 @@ public class SpawnManager : MonoBehaviour
                 }
                 if (findObj.transform.position.x < -2.7f)
                 {
+                    GameManager.instance.select.Clear();
                     Destroy(findObj);
                     if (_findObj.weather.Count != 0)
                     {

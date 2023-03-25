@@ -11,7 +11,7 @@ public class InGameManager : MonoBehaviour
 {
     SpawnManager SpawnManager;
 
-
+    int tempNum;
 
     [SerializeField] private GameObject BGObject;
     [SerializeField] private GameObject bossHP;
@@ -31,6 +31,8 @@ public class InGameManager : MonoBehaviour
 
     [SerializeField] private List<Sprite> BG = new List<Sprite>();
     [SerializeField] private List<GameObject> hearts = new List<GameObject>();
+    [SerializeField] private List<GameObject> select = new List<GameObject>();
+    [SerializeField] private List<GameObject> button = new List<GameObject>();
 
     void Start()
     {
@@ -49,6 +51,22 @@ public class InGameManager : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.instance.select.Count >= 1) select[0].SetActive(true);
+        else select[0].SetActive(false);
+        if (GameManager.instance.select.Count >= 2) select[1].SetActive(true);
+        else select[1].SetActive(false);
+        if (GameManager.instance.select.Count >= 3) select[2].SetActive(true);
+        else select[2].SetActive(false);
+        for (int i=0; i < GameManager.instance.select.Count; i++)
+        {
+            for(int j=0; j<4; j++)
+            {
+                if (GameManager.instance.select[i] == GameManager.instance.buttonNumber[j])
+                    tempNum = j;
+            }
+            select[i].GetComponent<Image>().sprite = button[tempNum].GetComponent<Image>().sprite;
+        }
+
         if (GameManager.instance.q.Count != 0)
         {
             temp = "";

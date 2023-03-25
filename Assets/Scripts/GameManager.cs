@@ -38,6 +38,8 @@ public class GameManager : MonoBehaviour
     public List<GameObject> weatherList = new List<GameObject> { };
     public List<int> nowState = new List<int> { }; //현재 입력된 정답
     public List<int> weatherState = new List<int> { };
+    public List<int> select = new List<int> { };
+    public List<int> buttonNumber = new List<int> {0, 0, 0, 0};
     public int season; // 계절 봄/여름/가을/겨울 0/1/2/3
     public int hp;
     public int bossClick;

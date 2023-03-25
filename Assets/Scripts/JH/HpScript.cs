@@ -11,9 +11,8 @@ public class HpScript : MonoBehaviour
     public Text crruentScoretext;
     public Text bestScoretext;
 
-     private string key = "BestScore" ;
+    private string key = "BestScore" ;
 
-       int _crruentscore =  GameManager.instance.crruentScore;
     [SerializeField] private GameObject gameoverPanel;
     bool check;
 

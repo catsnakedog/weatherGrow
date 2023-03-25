@@ -3954,6 +3954,8 @@ MonoBehaviour:
   weatherList: []
   nowState: 
   weatherState: 
+  select: 
+  buttonNumber: 00000000000000000000000000000000
   season: -1
   hp: 0
   bossClick: 0
@@ -4524,6 +4526,7 @@ GameObject:
   - component: {fileID: 2133029541}
   - component: {fileID: 2133029540}
   - component: {fileID: 2133029544}
+  - component: {fileID: 2133029545}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: UI
@@ -4638,6 +4641,18 @@ MonoBehaviour:
   SettingCanvas: {fileID: 305968288}
   Credit: {fileID: 2020586677}
   sfxVolumeSlider: {fileID: 1179954487}
+--- !u!114 &2133029545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133029539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b368bc91d40ef41b62fe240613f8fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3148415156415631034
 GameObject:
   m_ObjectHideFlags: 0

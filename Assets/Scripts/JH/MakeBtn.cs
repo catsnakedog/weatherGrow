@@ -67,18 +67,22 @@ public class MakeBtn : MonoBehaviour
         {
             if (GameManager.instance.season == 0) //1234
             {
+                GameManager.instance.buttonNumber[0] = 1;
                 CheckAns1();
             }
             else if (GameManager.instance.season == 1)
             {
+                GameManager.instance.buttonNumber[0] = 1;
                 CheckAns1();
             }
             else if (GameManager.instance.season == 2)
             {
+                GameManager.instance.buttonNumber[0] = 1;
                 CheckAns1();
             }
             else if (GameManager.instance.season == 3)
             {
+                GameManager.instance.buttonNumber[0] = 1;
                 CheckAns1();
             }
             else
@@ -98,18 +102,22 @@ public class MakeBtn : MonoBehaviour
         {
             if (GameManager.instance.season == 0) //1234
             {
+                GameManager.instance.buttonNumber[1] = 2;
                 CheckAns2();
             }
             else if (GameManager.instance.season == 1)
             {
+                GameManager.instance.buttonNumber[1] = 2;
                 CheckAns2();
             }
             else if (GameManager.instance.season == 2)
             {
+                GameManager.instance.buttonNumber[1] = 2;
                 CheckAns2();
             }
             else if (GameManager.instance.season == 3)
             {
+                GameManager.instance.buttonNumber[1] = 6;
                 CheckAns6();
             }
             else
@@ -129,18 +137,22 @@ public class MakeBtn : MonoBehaviour
         {
             if (GameManager.instance.season == 0) //1234
             {
+                GameManager.instance.buttonNumber[2] = 3;
                 CheckAns3();
             }
             else if (GameManager.instance.season == 1)
             {
+                GameManager.instance.buttonNumber[2] = 3;
                 CheckAns3();
             }
             else if (GameManager.instance.season == 2)
             {
+                GameManager.instance.buttonNumber[2] = 4;
                 CheckAns4();
             }
             else if (GameManager.instance.season == 3)
             {
+                GameManager.instance.buttonNumber[2] = 3;
                 CheckAns3();
             }
             else
@@ -160,18 +172,22 @@ public class MakeBtn : MonoBehaviour
         {
             if (GameManager.instance.season == 0) //1234
             {
+                GameManager.instance.buttonNumber[3] = 4;
                 CheckAns4();
             }
             else if (GameManager.instance.season == 1)
             {
+                GameManager.instance.buttonNumber[3] = 4;
                 CheckAns4();
             }
             else if (GameManager.instance.season == 2)
             {
+                GameManager.instance.buttonNumber[3] = 5;
                 CheckAns5();
             }
             else if (GameManager.instance.season == 3)
             {
+                GameManager.instance.buttonNumber[3] = 4;
                 CheckAns4();
             }
             else
@@ -191,6 +207,7 @@ public class MakeBtn : MonoBehaviour
             { 
                 GameManager.Sound.Play("SFX/5_WeatherRight") ;
                 n.weather.Remove(1);
+                GameManager.instance.select.Add(1);
             }
             else if (!n.weather.Contains(1))
             {
@@ -209,6 +226,7 @@ public class MakeBtn : MonoBehaviour
             if (n.weather.Contains(2))
             {  GameManager.Sound.Play("SFX/5_WeatherRight") ;
                 n.weather.Remove(2);
+                GameManager.instance.select.Add(2);
                 Debug.Log("클릭된 횟수");
             }
             else if (!n.weather.Contains(2)) 
@@ -226,6 +244,7 @@ public class MakeBtn : MonoBehaviour
             n = GameManager.instance.q.Peek().GetComponent<WeatherAndBoss>();
             if (n.weather.Contains(3))
             { GameManager.Sound.Play("SFX/5_WeatherRight") ;
+                GameManager.instance.select.Add(3);
                 n.weather.Remove(3);
             }
             else if (!n.weather.Contains(3))
@@ -243,6 +262,7 @@ public class MakeBtn : MonoBehaviour
             n = GameManager.instance.q.Peek().GetComponent<WeatherAndBoss>();
             if (n.weather.Contains(4))
             {  GameManager.Sound.Play("SFX/5_WeatherRight") ;
+                GameManager.instance.select.Add(4);
                 n.weather.Remove(4);
             }
             else if (!n.weather.Contains(4))
@@ -260,6 +280,7 @@ public class MakeBtn : MonoBehaviour
             n = GameManager.instance.q.Peek().GetComponent<WeatherAndBoss>();
             if (n.weather.Contains(5))
             {  GameManager.Sound.Play("SFX/5_WeatherRight") ;
+                GameManager.instance.select.Add(5);
                 n.weather.Remove(5);
             }
             else if (!n.weather.Contains(5))
@@ -276,6 +297,7 @@ public class MakeBtn : MonoBehaviour
             n = GameManager.instance.q.Peek().GetComponent<WeatherAndBoss>();
             if (n.weather.Contains(6))
             {  GameManager.Sound.Play("SFX/5_WeatherRight") ;
+                GameManager.instance.select.Add(6);
                 n.weather.Remove(6);
             }
             else if (!n.weather.Contains(6))
