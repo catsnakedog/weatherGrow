@@ -39,8 +39,8 @@ public class NewsCast : MonoBehaviour
        while(true)
        {
            char temp = _text.text[0];
-             string tmp = _text.text.Substring(1, this.transform.GetComponent<Text>().text.Length -1) ;
-              yield return new WaitForSeconds(0.15f) ;
+            Debug.Log(temp);
+           string tmp = _text.text.Substring(1, this.transform.GetComponent<Text>().text.Length -1) ;
            _text.text =  tmp+temp ;
            yield return new WaitForSeconds(0.15f) ;
        } 
