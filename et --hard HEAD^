@@ -1,0 +1,770 @@
+[33mcommit 1bf874b5e3f08ea4715fe1832b92e6d9406e23ea[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 90da381 a746313
+Author: WinterYun <ehddbs0216@naver.com>
+Date:   Sun Mar 26 15:45:42 2023 +0900
+
+    뉴스캐스트
+
+[33mcommit 90da381a60ab162edd86be7538b8a43fbe39b7bd[m
+Author: WinterYun <ehddbs0216@naver.com>
+Date:   Sun Mar 26 15:37:59 2023 +0900
+
+    뉴스캐스트
+
+[33mcommit a7463139952f150b5e453e05718831ddf09a1f11[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Sat Mar 25 19:34:02 2023 +0900
+
+    선택한 사항, 해상도 대응
+    
+    선택한 사항에 대해서 UI로 표시, 새로가 더 긴 경우 해상도 대응이 안되는 현상 해결
+
+[33mcommit a793b0b7a670d19b413de058d05a395ee8a3e348[m
+Author: WinterYun <ehddbs0216@naver.com>
+Date:   Sat Mar 11 18:13:58 2023 +0900
+
+    점수판
+
+[33mcommit 02a5b9e4bc077b35b2d0bcf75b5e7201b9533a51[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Sat Mar 11 17:47:01 2023 +0900
+
+    버그 수정
+
+[33mcommit f6c194ded22b4153653c6781f2c6acb8b57ab64a[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Sat Mar 11 17:44:30 2023 +0900
+
+    잔버그 수정
+
+[33mcommit 1780299d026b16fe28557ca54a4c189a10cb9c82[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Sat Mar 11 17:40:51 2023 +0900
+
+    통합본 및 자잘한 버그 수정
+    
+    1
+
+[33mcommit ca88f8ffba99789afc52ad6d006c4654ff1a5ee2[m
+Merge: e6aab1f f4d1f1b
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Sat Mar 11 17:34:15 2023 +0900
+
+    1
+    
+    1
+
+[33mcommit e6aab1fe9fd432dbb9f3176bde7043a289d98595[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Sat Mar 11 17:31:12 2023 +0900
+
+    UI 거의 완성
+
+[33mcommit f4d1f1bb2837299237191c5f1a74da2be26efc3a[m
+Author: WinterYun <ehddbs0216@naver.com>
+Date:   Sat Mar 11 17:13:04 2023 +0900
+
+    날씨아이
+
+[33mcommit 2056562927c0a95654f02721a6a3806f6de0a84e[m
+Merge: c43bac3 dfbd424
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Sat Mar 11 15:25:43 2023 +0900
+
+    Merge branch 'main' of https://github.com/catsnakedog/weatherGrow
+
+[33mcommit c43bac319b2f313d4b79037201aafe48dc54838f[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Sat Mar 11 15:25:27 2023 +0900
+
+    합치기용
+
+[33mcommit dfbd424d8195e524354564d1cee5e300cfbcebaa[m
+Merge: f8c7091 d674c5d
+Author: dosawas <dosawas@naver.com>
+Date:   Sat Mar 11 15:25:12 2023 +0900
+
+    Merge branch 'main' of https://github.com/catsnakedog/weatherGrow
+
+[33mcommit f8c70916bb7f73f5d48c76817a9a919c0efeb1c4[m
+Author: dosawas <dosawas@naver.com>
+Date:   Sat Mar 11 15:24:48 2023 +0900
+
+    스프라이트들
+    
+    ㅋㄹ
+
+[33mcommit d674c5d5f185f3cb12662638712cda7f3ea0714e[m
+Merge: 4b624d8 4fd3345
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Sat Mar 11 15:21:29 2023 +0900
+
+    Merge branch 'main' of https://github.com/catsnakedog/weatherGrow
+
+[33mcommit 4b624d886a7a5c826b9bfa1c3f6bd2ef218641e1[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Sat Mar 11 15:21:27 2023 +0900
+
+    잡다한거
+
+[33mcommit 4fd334582401f755a06d122932ab3a5f2b0c119b[m
+Author: WinterYun <ehddbs0216@naver.com>
+Date:   Sat Mar 11 15:10:48 2023 +0900
+
+    미세조정
+
+[33mcommit 78d57634e6f5f6b7b2fdac3c0a97f62276d50902[m
+Merge: 28d2c01 6e3b32e
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Sat Mar 11 14:52:13 2023 +0900
+
+    Merge branch 'main' of https://github.com/catsnakedog/weatherGrow
+
+[33mcommit 6e3b32e6b761830a05802cd0bb3d03cfea16c894[m
+Author: WinterYun <ehddbs0216@naver.com>
+Date:   Sat Mar 11 14:51:03 2023 +0900
+
+    사운드1
+
+[33mcommit 28d2c018910e212395283ab8c75b79dba7dee47c[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Sat Mar 11 14:50:43 2023 +0900
+
+    스타트씬 UI 수정
+
+[33mcommit 3060a92c8cf5cf9cd7397e5d4057b64466466cf4[m
+Merge: f2871b3 7a9fe22
+Author: WinterYun <ehddbs0216@naver.com>
+Date:   Sat Mar 11 14:43:50 2023 +0900
+
+    Merge branch 'main' of https://github.com/catsnakedog/weatherGrow
+
+[33mcommit f2871b30eae927df91bfa5c5d13d476a572d5c88[m
+Author: WinterYun <ehddbs0216@naver.com>
+Date:   Sat Mar 11 14:43:46 2023 +0900
+
+    보스 사운드
+
+[33mcommit 7a9fe223ec1cb8d9d8656b0765851ed1e5250e4c[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Sat Mar 11 14:41:42 2023 +0900
+
+    UI 수정 2차
+
+[33mcommit 720828e98c9196a328e7072ed86549e0d91583c5[m
+Merge: b1eb28b 12938f4
+Author: WinterYun <ehddbs0216@naver.com>
+Date:   Sat Mar 11 14:25:16 2023 +0900
+
+    Merge branch 'main' of https://github.com/catsnakedog/weatherGrow
+
+[33mcommit b1eb28b615233f3c786ddd587c01b11693668b01[m
+Author: WinterYun <ehddbs0216@naver.com>
+Date:   Sat Mar 11 14:21:57 2023 +0900
+
+    사운드마무리
+
+[33mcommit 12938f40ede6a4b99e9a1e9743eee2eece6f22f4[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Sat Mar 11 14:21:53 2023 +0900
+
+    UI 수정
+
+[33mcommit 7038c2e0c465439768d7262d295650bb8484a2d4[m
+Author: WinterYun <ehddbs0216@naver.com>
+Date:   Wed Mar 8 19:46:37 2023 +0900
+
+    sound작업완료
+
+[33mcommit da951c33489018536f75c4e5b13aeb365add9d42[m
+Author: penguiin1 <104720787+penguiin1@users.noreply.github.com>
+Date:   Wed Feb 22 16:56:28 2023 +0900
+
+    IngameUI apply
+
+[33mcommit 9dd1f3ebe5e0db59ce9c75cb146c45270fbb0b0a[m
+Merge: add982e 0ddad77
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Wed Feb 22 16:39:24 2023 +0900
+
+    Merge branch 'main' of https://github.com/catsnakedog/weatherGrow
+
+[33mcommit add982ede44204584c06ced7a2fb3cf388d77e57[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Wed Feb 22 16:39:14 2023 +0900
+
+    세팅수정
+
+[33mcommit 0ddad7777954730bd440b831783c0eb1d8127342[m
+Author: dosawas <dosawas@naver.com>
+Date:   Wed Feb 22 16:34:06 2023 +0900
+
+    buttonimage
+    
+    change button img
+
+[33mcommit 57bf2420b9f88a2da3ceada163b0d7d2f697a25c[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Wed Feb 15 21:37:23 2023 +0900
+
+    시작씬 수정
+
+[33mcommit 4f8d6de1c04e11f6bcfa7aef671cc28579ee538e[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Wed Dec 21 21:00:18 2022 +0900
+
+    화면비율 고정
+
+[33mcommit d1cdcbade68b2d0428f52b4d6ef8ebf79f397979[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Wed Dec 21 19:41:32 2022 +0900
+
+    최종최종
+
+[33mcommit afb709655dd116e31ee0cd6aa2fb5f786483592a[m
+Merge: cf20387 9837317
+Author: Winteryun <118039226+Winteryun@users.noreply.github.com>
+Date:   Wed Dec 21 19:08:43 2022 +0900
+
+    Merge branch 'main' of https://github.com/catsnakedog/weatherGrow
+
+[33mcommit cf20387f520601a8188e7a40e5738d47ddc87d30[m
+Author: Winteryun <118039226+Winteryun@users.noreply.github.com>
+Date:   Wed Dec 21 19:08:28 2022 +0900
+
+    ㄴㄴ
+
+[33mcommit 9837317401df317dcebed870afd057776f21210f[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Wed Dec 21 18:55:49 2022 +0900
+
+    오류 수정
+    
+    오브젝트가 파괴 안되는 버그 수정
+
+[33mcommit fa4d493e0e5b9676d4038284a6505d68c37484b6[m
+Author: penguiin1 <104720787+penguiin1@users.noreply.github.com>
+Date:   Wed Dec 21 18:42:52 2022 +0900
+
+    fixed error
+    
+    오류 해결
+
+[33mcommit f2688333a485fa1b4cedebb19e202663e7c0e544[m
+Author: Winteryun <118039226+Winteryun@users.noreply.github.com>
+Date:   Wed Dec 21 18:27:32 2022 +0900
+
+    ㄷ
+
+[33mcommit 370390c13fbaffd093497d610cd55883a6857d44[m
+Merge: c0d2ec5 2eb1237
+Author: Winteryun <118039226+Winteryun@users.noreply.github.com>
+Date:   Wed Dec 21 18:23:42 2022 +0900
+
+    Merge branch 'main' of https://github.com/catsnakedog/weatherGrow
+
+[33mcommit c0d2ec5919f36b7a21b33c82886316680f613182[m
+Author: Winteryun <118039226+Winteryun@users.noreply.github.com>
+Date:   Wed Dec 21 18:23:36 2022 +0900
+
+    음악
+
+[33mcommit 2eb12374a1631bcb1dba25174731d09b3585fa03[m
+Merge: 1838177 8bd60cc
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Wed Dec 21 18:14:55 2022 +0900
+
+    Merge branch 'main' of https://github.com/catsnakedog/weatherGrow
+
+[33mcommit 1838177db5ba09c23e9734ddfae5feeb3e5b19de[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Wed Dec 21 18:14:47 2022 +0900
+
+    보스해결(진짜)
+
+[33mcommit 8bd60cc5522c94880e98a727e09731b09d5ec523[m
+Merge: ae04b59 bd4341f
+Author: penguiin1 <104720787+penguiin1@users.noreply.github.com>
+Date:   Wed Dec 21 18:10:35 2022 +0900
+
+    Merge branch 'main' of https://github.com/catsnakedog/weatherGrow
+
+[33mcommit ae04b5921dd0ffb0e703f2d4940d5ef6cd77c47c[m
+Author: penguiin1 <104720787+penguiin1@users.noreply.github.com>
+Date:   Wed Dec 21 18:10:04 2022 +0900
+
+    Fixed error
+    
+    오류 수정
+
+[33mcommit bd4341fcb986294f43b905cbedbb273eccba6fed[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Wed Dec 21 18:09:20 2022 +0900
+
+    보스 오류 해결
+
+[33mcommit efb6867e84dfeb45af1ac25f30ef5588f0a3fabc[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Wed Dec 21 17:59:02 2022 +0900
+
+    합치기
+
+[33mcommit ea90f8deb30d7d57eb27097d0a1d741e4da20799[m
+Author: dosawas <dosawas@naver.com>
+Date:   Wed Dec 21 17:04:09 2022 +0900
+
+    boss
+    
+    boss stage
+
+[33mcommit 9563d4d0a1d2b7a1a09ac2b1ea037b806afa8910[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Wed Dec 21 16:39:51 2022 +0900
+
+    ver1
+
+[33mcommit 900aaccc4880e0af120799f6a507ab4a62333183[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Wed Dec 21 16:35:16 2022 +0900
+
+    오류 수정
+
+[33mcommit e3d0e1c9721b91f765281f875b46374355895f1c[m
+Merge: 926e2b4 26cc916
+Author: Winteryun <118039226+Winteryun@users.noreply.github.com>
+Date:   Wed Dec 21 16:27:52 2022 +0900
+
+    Merge branch 'main' of https://github.com/catsnakedog/weatherGrow
+
+[33mcommit 926e2b420dd1bdfe0c2d3bd1de850942becf8167[m
+Author: Winteryun <118039226+Winteryun@users.noreply.github.com>
+Date:   Wed Dec 21 16:27:40 2022 +0900
+
+    ㅋㅋ
+
+[33mcommit 26cc916e0e8e031d1652e64ba60d5fb9db868345[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Wed Dec 21 16:25:37 2022 +0900
+
+    위치 조금 수정
+
+[33mcommit aa28d1026d6b3e955c6ed393680f027180bd331a[m
+Merge: 6112e6d 2e2f214
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Wed Dec 21 16:21:06 2022 +0900
+
+    Merge branch 'main' of https://github.com/catsnakedog/weatherGrow
+
+[33mcommit 6112e6d8d271af977924cbeef8a18932a9e0dded[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Wed Dec 21 16:20:54 2022 +0900
+
+    11
+
+[33mcommit 2e2f2144cfa15aabc3dc38a90bd9264fe81de528[m
+Merge: b6df740 61abac7
+Author: Winteryun <118039226+Winteryun@users.noreply.github.com>
+Date:   Wed Dec 21 16:20:22 2022 +0900
+
+    Merge branch 'main' of https://github.com/catsnakedog/weatherGrow
+
+[33mcommit b6df740c6716a9d1bfacb81bb81bbdb0dc4e421a[m
+Author: Winteryun <118039226+Winteryun@users.noreply.github.com>
+Date:   Wed Dec 21 16:20:11 2022 +0900
+
+    살짝수정
+
+[33mcommit 61abac78628c863ac057e9162289f6f6f9ddefc4[m
+Merge: dea739f 79cf129
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Wed Dec 21 16:19:32 2022 +0900
+
+    Merge branch 'main' of https://github.com/catsnakedog/weatherGrow
+
+[33mcommit dea739fa9d2e31fbdcf74f5117d7a6fd9b452040[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Wed Dec 21 16:19:20 2022 +0900
+
+    스프라이트 마스크 적용
+
+[33mcommit 79cf12964295923091cc9e390be8fcd3cd1d2da1[m
+Merge: ed165f4 d89fab2
+Author: Winteryun <118039226+Winteryun@users.noreply.github.com>
+Date:   Wed Dec 21 16:10:31 2022 +0900
+
+    Merge branch 'main' of https://github.com/catsnakedog/weatherGrow
+
+[33mcommit ed165f44fa8da3ed221fd2b864d831841cbec7b5[m
+Author: Winteryun <118039226+Winteryun@users.noreply.github.com>
+Date:   Wed Dec 21 16:10:27 2022 +0900
+
+    저장
+
+[33mcommit d89fab2167663b3dee644e19a88e54dfe0a5508c[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Wed Dec 21 16:05:00 2022 +0900
+
+    인게임 메니저 수정
+    
+    오류 수정
+
+[33mcommit 3fd577c0fbdd3652c27a2288403b8427f7984025[m
+Author: penguiin1 <104720787+penguiin1@users.noreply.github.com>
+Date:   Wed Dec 21 16:03:27 2022 +0900
+
+    Make Weather Prefabs
+    
+    계절별 프리팹 생성
+
+[33mcommit 0bba0a5e17dc054775b416fbf7205512b1932532[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Wed Dec 21 15:47:06 2022 +0900
+
+    인게임신 수정
+    
+    인게임신 수정
+
+[33mcommit 5714905950b858ada36e8adecf74d0c896ae7b62[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Wed Dec 21 15:26:01 2022 +0900
+
+    인게임 UI 수정
+    
+    인게임 UI 수정
+
+[33mcommit f580f98597e047d66513df1c46db73fa13ed0149[m
+Merge: bbcd99c a370b56
+Author: Winteryun <118039226+Winteryun@users.noreply.github.com>
+Date:   Wed Dec 21 14:53:14 2022 +0900
+
+    Merge branch 'main' of https://github.com/catsnakedog/weatherGrow
+
+[33mcommit bbcd99ce1ac3b58a37de295f06d39ba2fb283d22[m
+Author: Winteryun <118039226+Winteryun@users.noreply.github.com>
+Date:   Wed Dec 21 14:53:02 2022 +0900
+
+    현재점수, 최고점수
+
+[33mcommit a370b5635871dc0b4e6c6cd2a3c15b0bb6b75db1[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Wed Dec 21 14:49:26 2022 +0900
+
+    스타트신 설장창 UI 최종
+
+[33mcommit 3f3e1d866e023eb941718beefdf9d7ec8a35466e[m
+Author: Winteryun <118039226+Winteryun@users.noreply.github.com>
+Date:   Wed Dec 21 14:10:03 2022 +0900
+
+    퍼스트씬 전환
+
+[33mcommit 1350ef8ed770a3df81b48fa74e00b2db0545fe84[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Wed Dec 21 14:08:48 2022 +0900
+
+    오류 수정
+    
+    정답 리스트가 제대로 값을 못 읽어오는거 수정, 딜레이 수정
+
+[33mcommit 6094c14fda4caa5ccd5b887c996910d5751dbbe9[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Wed Dec 21 13:58:01 2022 +0900
+
+    이것저것
+    
+    HP UI추가 SCORE UI 추가 임시 답안 UI추가 죽을때 GameOver 연결
+
+[33mcommit 228d797b0fa10a9c15cea8220a6d2fc87594a37c[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Wed Dec 21 13:21:13 2022 +0900
+
+    조금 수정버전
+    
+    123
+
+[33mcommit e3dd4617453dafba58d084f8d4ff01b18a49864b[m
+Author: penguiin1 <104720787+penguiin1@users.noreply.github.com>
+Date:   Wed Dec 21 05:17:11 2022 +0900
+
+    Make GameOverPU
+    
+    게임오버 팝업 작업 / 정답 연속으로 입력되는 버그 수정
+
+[33mcommit 68b895b083523ab3d3df27fa47546529262839b4[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Sat Dec 17 22:17:30 2022 +0900
+
+    사운드 문제 해결
+    
+    해결
+
+[33mcommit fe68f4d4e3a1f6317854e2526507f81d79ddd05f[m
+Merge: 7e8d95b 4bf4000
+Author: Winteryun <118039226+Winteryun@users.noreply.github.com>
+Date:   Sat Dec 17 22:06:31 2022 +0900
+
+    Merge branch 'main' of https://github.com/catsnakedog/weatherGrow
+
+[33mcommit 7e8d95be136b959990d901c035e9af0456c8e5d1[m
+Author: Winteryun <118039226+Winteryun@users.noreply.github.com>
+Date:   Sat Dec 17 22:06:03 2022 +0900
+
+    저장함수, 슬라이더 작업
+
+[33mcommit 4bf4000ce52921fe3a7a72f15ecd29a454f43010[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Sat Dec 17 22:05:08 2022 +0900
+
+    합치기
+    
+    11
+
+[33mcommit 52a9b82e411d38e62ef65aac11ebaa649d2bf508[m
+Merge: de91703 b1cee68
+Author: Winteryun <118039226+Winteryun@users.noreply.github.com>
+Date:   Sat Dec 17 16:34:47 2022 +0900
+
+    Merge branch 'main' of https://github.com/catsnakedog/weatherGrow
+
+[33mcommit b1cee68e03eb66e2ac0a364c093a8e5d7797e1cf[m
+Author: penguiin1 <104720787+penguiin1@users.noreply.github.com>
+Date:   Thu Dec 15 00:22:27 2022 +0900
+
+    Btn Script Fixed
+    
+    버그 수정
+
+[33mcommit 15f86939846d2570392acac22bdcf374f308d46a[m
+Author: penguiin1 <104720787+penguiin1@users.noreply.github.com>
+Date:   Sat Dec 10 22:19:22 2022 +0900
+
+    Script Fixed
+    
+    오류 수정
+
+[33mcommit ac0087aaed19154e1d2a0aad4b85970652e575f4[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Wed Nov 30 20:06:57 2022 +0900
+
+    최종
+    
+    11
+
+[33mcommit de91703dbccaf6a1e400f1aca356f16c572c436e[m
+Author: Winteryun <118039226+Winteryun@users.noreply.github.com>
+Date:   Wed Nov 30 19:38:26 2022 +0900
+
+    별거아님 살짝 수정본
+
+[33mcommit 660bd155f0ac234172eaae366adbc82a88da0548[m
+Merge: 0a02178 314f000
+Author: penguiin1 <104720787+penguiin1@users.noreply.github.com>
+Date:   Wed Nov 30 19:37:03 2022 +0900
+
+    Merge branch 'main' of https://github.com/catsnakedog/weatherGrow
+
+[33mcommit 0a0217857a878517672baeba2dce64772f0e3f12[m
+Author: penguiin1 <104720787+penguiin1@users.noreply.github.com>
+Date:   Wed Nov 30 19:36:57 2022 +0900
+
+    Script FIxed
+    
+    버튼추가
+
+[33mcommit 314f00099c65c26dca87127a79da71d49f65e9d2[m
+Author: Winteryun <118039226+Winteryun@users.noreply.github.com>
+Date:   Wed Nov 30 19:21:48 2022 +0900
+
+    사운드매니저 완전수정본
+
+[33mcommit b7da9ff84135056c1003160b75756ffd6d526388[m
+Merge: dd6634b b68e31e
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Wed Nov 30 17:33:40 2022 +0900
+
+    Merge branch 'main' of https://github.com/catsnakedog/weatherGrow
+
+[33mcommit dd6634be8928763051e4dbb894aa37786b4e05a7[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Wed Nov 30 17:33:27 2022 +0900
+
+    병합용
+
+[33mcommit b68e31e7151d088e76dfcb2228d457eee9bfc3f7[m
+Author: Winteryun <118039226+Winteryun@users.noreply.github.com>
+Date:   Wed Nov 30 17:27:26 2022 +0900
+
+    불필요 파일 일부제거
+
+[33mcommit a0f80750c89087af1dad6aa9d61434783dfa0e72[m
+Merge: e1612b7 157a621
+Author: Winteryun <118039226+Winteryun@users.noreply.github.com>
+Date:   Wed Nov 30 17:20:30 2022 +0900
+
+    Merge branch 'main' of https://github.com/catsnakedog/weatherGrow
+
+[33mcommit e1612b71c023cdede8504c1fa71a5fa02b0450b3[m
+Author: Winteryun <118039226+Winteryun@users.noreply.github.com>
+Date:   Wed Nov 30 17:20:25 2022 +0900
+
+    사운드 스크립트
+
+[33mcommit 157a62117fa09d1cba818a540051d9966dc9dde9[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Wed Nov 30 17:00:17 2022 +0900
+
+    인게임 시스템 연결
+    
+    SpawnManager 스크립트 수정 InGameManager 스크립트 수정, 스타트 신 조금 수정, 인게임 신 수정
+
+[33mcommit 7dc15dac02e484f3589e51e7859bf7b7bf16f718[m
+Author: penguiin1 <104720787+penguiin1@users.noreply.github.com>
+Date:   Tue Nov 29 01:13:29 2022 +0900
+
+    Script Fixed
+    
+    .
+
+[33mcommit 1c163276ccd48ced8465ee464e5c0b40689c991f[m
+Author: penguiin1 <104720787+penguiin1@users.noreply.github.com>
+Date:   Mon Nov 28 03:47:35 2022 +0900
+
+    Script Add/Fixed
+    
+    버튼 스크립트 수정/ 스폰매니저 수정/
+    Define 스크립트 추가/ 날씨 스크립트 추가
+
+[33mcommit 6e0fe3f575b72532e829f566e1f9a8d1a4b91ebf[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Sun Nov 27 23:31:26 2022 +0900
+
+    UI 추가
+
+[33mcommit f209245d7f78ac2f38c59d33a93602d9d90b3897[m
+Author: dosawas <dosawas@naver.com>
+Date:   Wed Nov 23 19:54:53 2022 +0900
+
+    randomCreate
+
+[33mcommit 4804146cf9f9f0f42a1d03d5195ac3a549dfeeae[m
+Author: penguiin1 <104720787+penguiin1@users.noreply.github.com>
+Date:   Wed Nov 23 19:43:38 2022 +0900
+
+    Script Fixed
+    
+    변수 추가, 버튼 스크립트 수정
+
+[33mcommit 75957f5497148a8db03d637d7942f9e22f52ecdd[m
+Merge: 38e3f4d afb452b
+Author: Winteryun <118039226+Winteryun@users.noreply.github.com>
+Date:   Wed Nov 23 19:19:17 2022 +0900
+
+    Merge branch 'main' of https://github.com/catsnakedog/weatherGrow
+
+[33mcommit 38e3f4dbc0e34890bb3563b216cde620b0e3301f[m
+Author: Winteryun <118039226+Winteryun@users.noreply.github.com>
+Date:   Wed Nov 23 19:19:12 2022 +0900
+
+    망작
+
+[33mcommit afb452b39da449cec77939e040e65f1714aaa0e4[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Wed Nov 23 19:15:14 2022 +0900
+
+    임시 씬 추가
+
+[33mcommit a66b6dc3081b31082abbb66ab68b9f40284d6b03[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Wed Nov 23 18:30:52 2022 +0900
+
+    코드 수정1차
+
+[33mcommit 1c95ff60911e29bbee4217a1c6762a003314c991[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Wed Nov 23 17:40:01 2022 +0900
+
+    이미지 추가
+
+[33mcommit a34ecd97eb56cc9977dfef6cb3a67f7007d0c7eb[m
+Merge: 4978433 ddd2b2c
+Author: Winteryun <118039226+Winteryun@users.noreply.github.com>
+Date:   Wed Nov 23 17:17:07 2022 +0900
+
+    Merge branch 'main' of https://github.com/catsnakedog/weatherGrow
+
+[33mcommit 49784330edfc1cfc0eba6f2b710702ad782fa8e2[m
+Author: Winteryun <118039226+Winteryun@users.noreply.github.com>
+Date:   Wed Nov 23 17:16:55 2022 +0900
+
+    ui
+    
+    ui
+
+[33mcommit ddd2b2c119ad9ddf4d3db3da607e90ddcc5863f3[m
+Merge: df68a07 5b95b31
+Author: penguiin1 <104720787+penguiin1@users.noreply.github.com>
+Date:   Wed Nov 16 19:29:21 2022 +0900
+
+    Merge branch 'main' of https://github.com/catsnakedog/weatherGrow
+
+[33mcommit df68a07e0a199a8605c5286e02f82f343dfef8e7[m
+Author: penguiin1 <104720787+penguiin1@users.noreply.github.com>
+Date:   Wed Nov 16 19:29:10 2022 +0900
+
+    Ingame Setup
+    
+    인게임 일시정지 후 재개 카운트다운 구현
+
+[33mcommit 5b95b31d71fc12a40180cbc25902620d307ec920[m
+Merge: c411fcd 5e6d265
+Author: dosawas <dosawas@naver.com>
+Date:   Wed Nov 16 19:12:56 2022 +0900
+
+    Merge branch 'main' of https://github.com/catsnakedog/weatherGrow
+
+[33mcommit c411fcdcf1084a9d07c59ac449597ead1daf4f9d[m
+Author: dosawas <dosawas@naver.com>
+Date:   Wed Nov 16 19:12:47 2022 +0900
+
+    Create PackageManagerSettings 2.asset
+    
+    텍스트 무브
+
+[33mcommit 5e6d2652bc4ec467a42a7285d9f80ab16b62eeb0[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Wed Nov 16 19:10:38 2022 +0900
+
+    Update StartScene.unity
+
+[33mcommit da974fbf0e80de2646b55f175809a7916515a2a3[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Wed Nov 16 18:16:23 2022 +0900
+
+    스타트신 완료
+
+[33mcommit d52e4578ab4c64764d7aea825b3cabc2baa02ac2[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Sat Nov 12 17:35:01 2022 +0900
+
+    11.12
+    
+    합치기
+
+[33mcommit 96bc6c8fbd587e0025bb3e85561e3a04b14ab6ee[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Sat Nov 12 17:19:37 2022 +0900
+
+    test
+
+[33mcommit b1a6ab8956ec8a507923f76c4639a0bb88f348d5[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Sat Nov 12 17:16:23 2022 +0900
+
+    프로젝트
+    
+    프로젝트
+
+[33mcommit 5936f936752299f8c5517cb95a14c8e5745f1ebf[m
+Author: catsnakedog <0812kdh@gmail.com>
+Date:   Sat Nov 12 17:09:46 2022 +0900
+
+    Initial commit
