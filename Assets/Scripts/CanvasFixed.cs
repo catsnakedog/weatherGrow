@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CanvasFixed : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         int setWidth = 1080; // 사용자 설정 너비
         int setHeight = 1920; // 사용자 설정 높이
@@ -16,7 +16,7 @@ public class CanvasFixed : MonoBehaviour
 
         int rate = (setHeight/setWidth);
 
-        if (rate * deviceWidth > setHeight)// 가로가 더 긴 상황 (새로에 맞춰야함)
+        if (rate * deviceWidth > deviceHeight)// 가로가 더 긴 상황 (새로에 맞춰야함)
         {
             this.GetComponent<CanvasScaler>().matchWidthOrHeight = 1;
         }
