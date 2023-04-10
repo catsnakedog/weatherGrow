@@ -30,7 +30,8 @@ public class InGameManager : MonoBehaviour
     private WeatherAndBoss n;
 
     [SerializeField] private List<Sprite> BG = new List<Sprite>();
-    [SerializeField] private List<GameObject> hearts = new List<GameObject>();
+    [SerializeField] private List<GameObject> heartsFull = new List<GameObject>();
+    [SerializeField] private List<GameObject> heartsEmpty = new List<GameObject>();
     [SerializeField] private List<GameObject> select = new List<GameObject>();
     [SerializeField] private List<GameObject> button = new List<GameObject>();
 
@@ -113,15 +114,18 @@ public class InGameManager : MonoBehaviour
 
         if (GameManager.instance.hp < 3)
         {
-            hearts[2].SetActive(false);
+            heartsFull[2].SetActive(false);
+            heartsEmpty[2].SetActive(true);
         }
         if (GameManager.instance.hp < 2)
         {
-            hearts[1].SetActive(false);
+            heartsFull[1].SetActive(false);
+            heartsEmpty[1].SetActive(true);
         }
         if (GameManager.instance.hp < 1)
         {
-            hearts[0].SetActive(false);
+            heartsFull[0].SetActive(false);
+            heartsEmpty[0].SetActive(true);
         }
 
         switch (season)
@@ -212,6 +216,7 @@ public class InGameManager : MonoBehaviour
 
     public void GoMain()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("StartScene");
     }
 }
