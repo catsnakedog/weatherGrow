@@ -21,7 +21,7 @@ public class InGameManager : MonoBehaviour
     [SerializeField] private Text seasonText;
     [SerializeField] private Text tempText;
     [SerializeField] private int year;
-    [SerializeField] private int speed;
+    [SerializeField] private float speed;
     [SerializeField] private int month;
     [SerializeField] private int bossClick;
     [SerializeField] private int season;
@@ -39,7 +39,7 @@ public class InGameManager : MonoBehaviour
     {
         GameManager.instance.bestScore = PlayerPrefs.GetInt("BestScore");
         SpawnManager = GameObject.FindWithTag("InGame").GetComponent<SpawnManager>();
-        speed = 1;
+        speed = 0f;
         year = 1;
         month = 3;
         bossClick = 10;
@@ -68,16 +68,6 @@ public class InGameManager : MonoBehaviour
             select[i].GetComponent<Image>().sprite = button[tempNum].GetComponent<Image>().sprite;
         }
 
-        if (GameManager.instance.q.Count != 0)
-        {
-            temp = "";
-            n = GameManager.instance.q.Peek().GetComponent<WeatherAndBoss>();
-            for (int j = 0; j < n.weather.Count; j++)
-            {
-                temp += n.weather[j].ToString();
-            }
-            tempText.text = temp;
-        }
 
         if (GameManager.instance.boss == null)
         {
@@ -106,8 +96,6 @@ public class InGameManager : MonoBehaviour
 
         if (seasonEnd)
         {
-            speed++;
-            GameManager.instance.speed = 1 + speed * 0.25f;
             StartCoroutine(YearPlay());
             seasonEnd = false;
         }
@@ -161,13 +149,21 @@ public class InGameManager : MonoBehaviour
     {
         Debug.Log("test");
         StartCoroutine(SeasonPlay());
-        yield return new WaitForSeconds(38f);
+        yield return new WaitForSeconds((3f - GameManager.instance.speed)*12 + 7f - GameManager.instance.speed + 8f);
+        speed += 0.5f;
+        GameManager.instance.speed = 1 + speed * 0.25f;
         StartCoroutine(SeasonPlay());
-        yield return new WaitForSeconds(38f);
+        yield return new WaitForSeconds((3f - GameManager.instance.speed) * 12 + 7f - GameManager.instance.speed + 8f);
+        speed += 0.5f;
+        GameManager.instance.speed = 1 + speed * 0.25f;
         StartCoroutine(SeasonPlay());
-        yield return new WaitForSeconds(38f);
+        yield return new WaitForSeconds((3f - GameManager.instance.speed) * 12 + 7f - GameManager.instance.speed + 8f);
+        speed += 0.5f;
+        GameManager.instance.speed = 1 + speed * 0.25f;
         StartCoroutine(SeasonPlay());
-        yield return new WaitForSeconds(38f);
+        yield return new WaitForSeconds((3f - GameManager.instance.speed)*12 + 7f - GameManager.instance.speed + 8f);
+        speed += 0.5f;
+        GameManager.instance.speed = 1 + speed * 0.25f;
         seasonEnd = true;
     }
     IEnumerator SeasonPlay()
@@ -177,26 +173,26 @@ public class InGameManager : MonoBehaviour
 
         for (int i = 1; i < 5; i++) // 1개월
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(3f - GameManager.instance.speed);
             SpawnManager.SpawnRandomWeather();
             GameManager.instance.crruentScore++;
         }
         month++;
         for (int i = 1; i < 5; i++) // 2개월
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(3f - GameManager.instance.speed);
             SpawnManager.SpawnRandomWeather();
             GameManager.instance.crruentScore++;
         }
         month++;
         for (int i = 1; i < 5; i++) // 3개월
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(3f - GameManager.instance.speed);
             SpawnManager.SpawnRandomWeather();
             GameManager.instance.crruentScore++;
         }
 
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(7f - GameManager.instance.speed);
         // 시즌이 끝날때 보스 소환 추가 여기다가 @@@@@@@
         SpawnManager.SpawnBossWeather();
         bossHP.SetActive(true);
