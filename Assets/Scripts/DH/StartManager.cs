@@ -28,7 +28,7 @@ public class StartManager : MonoBehaviour
     }
     public void HowToPlayImageChange()
     {
-        HowToPlayImage.sprite = ImageList[ImageCount-1];
+      HowToPlayImage.sprite = ImageList[ImageCount-1];
       GameManager.Sound.Play("SFX/2_ButtonClick") ;
         if(ImageCount == 1)
         {
@@ -68,6 +68,6 @@ public class StartManager : MonoBehaviour
 
     public void Reset()
     {
-        ImageCount = 1;
+        //ImageCount = 1;
     }
 }

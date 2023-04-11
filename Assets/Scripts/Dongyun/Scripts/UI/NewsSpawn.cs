@@ -37,7 +37,7 @@ public class NewsSpawn : MonoBehaviour
     {
         news.transform.Translate(Vector3.left * GameManager.instance.speed * Time.deltaTime);
         Debug.Log(news.transform.position.y);
-        if (news.transform.position.x < -7.7f)
+        if (news.transform.position.x < -7.3f)
         {
             NewsSetting();
         }
@@ -45,7 +45,7 @@ public class NewsSpawn : MonoBehaviour
 
     void NewsSetting()
     {
-        news.transform.position = new Vector3(7.7f, 1.125f);
+        news.transform.position = new Vector3(7.3f, 1.125f);
         random = Random.Range(0, newsContent.Count);
         text.text = newsContent[random];
     }
