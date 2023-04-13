@@ -39,7 +39,7 @@ public class save : MonoBehaviour
        int load = PlayerPrefs.GetInt("skip") ; 
        if(load == 1)
        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("StartScene") ; 
+            //UnityEngine.SceneManagement.SceneManager.LoadScene("StartScene") ; 
        }
     }
     public void ImageC()

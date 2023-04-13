@@ -9,6 +9,7 @@ public class NewsSpawn : MonoBehaviour
     int random;
     public Text text;
     public GameObject news;
+    public RectTransform newsC;
     public List<string> newsContent = new List<string> {
         "(종합) 대기 매우 건조, 화재 유의, 낮과 밤의 기온차 큼" ,
         "(오늘) 전국 대체로 맑음" ,
@@ -30,23 +31,28 @@ public class NewsSpawn : MonoBehaviour
 
     void Start()
     {
+        newsC = news.GetComponent<RectTransform>();
         random = Random.Range(0, newsContent.Count);
         text.text = newsContent[random];
     }
     void Update()
     {
-        news.transform.Translate(Vector3.left * GameManager.instance.speed * Time.deltaTime);
-        Debug.Log(news.transform.position.y);
-        if (news.transform.position.x < -7.3f)
+        news.transform.Translate(Vector3.left * GameManager.instance.speed* 0.7f * Time.deltaTime);
+        if (newsC.anchoredPosition.x < -540 - newsC.rect.width/2)
         {
+            StartCoroutine("NewsSetting");
             NewsSetting();
         }
     }
 
-    void NewsSetting()
+    IEnumerator NewsSetting()
     {
-        news.transform.position = new Vector3(7.3f, 1.125f);
+
         random = Random.Range(0, newsContent.Count);
         text.text = newsContent[random];
+        news.SetActive(false);
+        yield return new WaitForSeconds(0.2f);
+        news.SetActive(true);
+        newsC.anchoredPosition = new Vector3(540 + newsC.rect.width / 2, 0);
     }
 }

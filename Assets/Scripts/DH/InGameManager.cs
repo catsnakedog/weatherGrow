@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,6 +11,7 @@ using UnityEngine.UI;
 public class InGameManager : MonoBehaviour
 {
     SpawnManager SpawnManager;
+    [SerializeField] Animator AN;
 
     int tempNum;
 
@@ -27,6 +29,7 @@ public class InGameManager : MonoBehaviour
     [SerializeField] private int season;
     [SerializeField] private bool seasonEnd;
     [SerializeField] private string temp;
+    [SerializeField] private int tempHPCheck;
     private WeatherAndBoss n;
 
     [SerializeField] private List<Sprite> BG = new List<Sprite>();
@@ -44,6 +47,7 @@ public class InGameManager : MonoBehaviour
         month = 3;
         bossClick = 10;
         Time.timeScale = 1f;
+        tempHPCheck = GameManager.instance.hp; 
         GameManager.instance.crruentScore = year*48 + month*4;
         seasonEnd = false;
         GameManager.instance.bossClick = bossClick;
@@ -67,6 +71,7 @@ public class InGameManager : MonoBehaviour
             }
             select[i].GetComponent<Image>().sprite = button[tempNum].GetComponent<Image>().sprite;
         }
+
 
 
         if (GameManager.instance.boss == null)
@@ -116,26 +121,33 @@ public class InGameManager : MonoBehaviour
             heartsEmpty[0].SetActive(true);
         }
 
+        if (tempHPCheck != GameManager.instance.hp)
+        {
+            AN.SetBool("Damage", true);
+        }
+        else AN.SetBool("Damage", false);
+
+        tempHPCheck = GameManager.instance.hp;
         switch (season)
         {
             case 0:
-                seasonText.text = "봄";
+                seasonText.text = ": 봄";
                 BGObject.GetComponent<Image>().sprite = BG[0];
                 return;
             case 1:
-                seasonText.text = "여름";
+                seasonText.text = ": 여름";
                 BGObject.GetComponent<Image>().sprite = BG[1];
                 return;
             case 2:
-                seasonText.text = "가을";
+                seasonText.text = ": 가을";
                 BGObject.GetComponent<Image>().sprite = BG[2];
                 return;
             case 3:
-                seasonText.text = "겨울";
+                seasonText.text = ": 겨울";
                 BGObject.GetComponent<Image>().sprite = BG[3];
                 return;
             default:
-                seasonText.text = "오류";
+                seasonText.text = ": 오류";
                 return;
         }
     }
@@ -207,6 +219,7 @@ public class InGameManager : MonoBehaviour
     
     public void ReStart()
     {
+        GameManager.instance.select.Clear();
         SceneManager.LoadScene("InGame");
     }
 

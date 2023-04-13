@@ -10,6 +10,7 @@ public class HpScript : MonoBehaviour
     public GameObject Gameover;
     public Text crruentScoretext;
     public Text bestScoretext;
+    public Text tipText;
 
     private string key = "BestScore" ;
 
@@ -39,7 +40,8 @@ public class HpScript : MonoBehaviour
 
     IEnumerator gameEnd()
     {
-        Debug.Log("dd");
+        GameManager.Sound.Play("BGM/GameBgm_Score", Define.Sound.Bgm);
+        tipText.text = "tipmessge";
         GameManager.instance.q.Clear();
         Time.timeScale = 0;
           if(GameManager.instance.bestScore <=GameManager.instance.crruentScore) 
