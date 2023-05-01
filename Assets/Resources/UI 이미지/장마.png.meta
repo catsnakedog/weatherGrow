@@ -1,10 +1,7 @@
 fileFormatVersion: 2
-guid: 736908432055d4623b72c6f90005cec2
+guid: 4b5a9efdbd3d8d24d8dbf1e10ad7b03f
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -4680405215201216611
-    second: reporter0026_0
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -43,7 +40,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,28 +97,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: reporter0026_0
-      rect:
-        serializedVersion: 2
-        x: 118
-        y: 1043
-        width: 110
-        height: 154
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d97bb0f214cdb0fb0800000000000000
-      internalID: -4680405215201216611
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []

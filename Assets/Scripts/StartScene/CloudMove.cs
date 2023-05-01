@@ -27,8 +27,8 @@ public class CloudMove : MonoBehaviour
     {
         if(flag)
         {
-            runningTime += Time.deltaTime / speed;
-            yPos = Mathf.Sin(runningTime) * length;
+            runningTime += Time.deltaTime;
+            yPos = Mathf.Sin(runningTime) * length / speed;
             this.GetComponent<RectTransform>().anchoredPosition = new Vector2(ExPos, EyPos += yPos);
         }
     }

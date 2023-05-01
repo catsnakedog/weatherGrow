@@ -11,6 +11,10 @@ public class FairyTouch : MonoBehaviour
     {
         AN.SetBool("Start", true);
         AN.SetBool("Damage", false);
+    }
+
+    void Start()
+    {
         GameManager.instance.TCount = PlayerPrefs.GetInt("TouchCount", GameManager.instance.TCount);
         if (GameManager.instance.TCount >= 10) GameManager.instance.hurt1 = true;
         if (GameManager.instance.TCount >= 20) GameManager.instance.hurt2 = true;

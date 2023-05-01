@@ -27,19 +27,27 @@ public class InGameManager : MonoBehaviour
     [SerializeField] private Text bossNewsText;
     [SerializeField] private int year;
     [SerializeField] private float speed;
+    [SerializeField] private float createDelay;
+    [SerializeField] private float weatherWrongDelay;
     [SerializeField] private int month;
     [SerializeField] private int bossClick;
     [SerializeField] private int season;
     [SerializeField] private bool seasonEnd;
     [SerializeField] public bool bossOn;
+    [SerializeField] private bool changeOn;
+    [SerializeField] private bool wrongChangeOn;
     [SerializeField] private string temp;
     [SerializeField] private int tempHPCheck;
+    [SerializeField] private Sprite defaultImg;
     private WeatherAndBoss n;
 
     [SerializeField] private List<Sprite> BG = new List<Sprite>();
+    [SerializeField] private List<Sprite> BossSelect = new List<Sprite>();
     [SerializeField] private List<GameObject> heartsFull = new List<GameObject>();
     [SerializeField] private List<GameObject> heartsEmpty = new List<GameObject>();
     [SerializeField] private List<GameObject> select = new List<GameObject>();
+    [SerializeField] private List<GameObject> selectS = new List<GameObject>();
+    [SerializeField] private List<GameObject> selectS2 = new List<GameObject>();
     [SerializeField] private List<GameObject> button = new List<GameObject>();
 
     void Awake()
@@ -49,13 +57,13 @@ public class InGameManager : MonoBehaviour
 
     void Start()
     {
-        select[0].SetActive(false);
-        select[1].SetActive(false);
-        select[2].SetActive(false);
+        GameManager.instance.select.Clear();
         GameManager.instance.bestScore = PlayerPrefs.GetInt("BestScore");
         UI_BASE = GameObject.Find("Canvas").GetComponent<UI_BASE>();
         SpawnManager = GameObject.FindWithTag("InGame").GetComponent<SpawnManager>();
         speed = 0f;
+        changeOn = false;
+        wrongChangeOn = false;
         GameManager.instance.speed = 1 + speed * 0.25f;
         year = 1;
         month = 3;
@@ -70,6 +78,12 @@ public class InGameManager : MonoBehaviour
 
     void Update()
     {
+        if(!wrongChangeOn)
+        {
+            selectS2[0].SetActive(false);
+            selectS2[1].SetActive(false);
+            selectS2[2].SetActive(false);
+        }
         if(bossOn)
         {
             bossNewsText.transform.Translate(Vector3.left * GameManager.instance.speed * 0.7f * Time.deltaTime);
@@ -94,16 +108,7 @@ public class InGameManager : MonoBehaviour
             else UI_BASE.SettingCanvas.SetActive(true);
         }
 
-        if (GameManager.instance.select.Count >= 1) select[0].SetActive(true);
-        else select[0].SetActive(false);
-        if (GameManager.instance.select.Count >= 2) select[1].SetActive(true);
-        else select[1].SetActive(false);
-        if (GameManager.instance.select.Count >= 3)
-        {
-            select[2].SetActive(true);
-            GameManager.Sound.Play("SFX/5_WeatherRight");
-        }
-        else select[2].SetActive(false);
+        if (GameManager.instance.select.Count >= 3) GameManager.Sound.Play("SFX/5_WeatherRight");
         for (int i=0; i < GameManager.instance.select.Count; i++)
         {
             for(int j=0; j<4; j++)
@@ -113,7 +118,23 @@ public class InGameManager : MonoBehaviour
             }
             select[i].GetComponent<Image>().sprite = button[tempNum].GetComponent<Image>().sprite;
         }
-
+        int tempCnt = 2;
+        if (!changeOn && !bossOn)
+        {
+            if (GameManager.instance.select.Count == 3)
+            {
+                changeOn = true;
+                StartCoroutine("WeatherCreateImg");
+            }
+            else
+            {
+                for (int j = GameManager.instance.select.Count; j < 3; j++)
+                {
+                    select[tempCnt].GetComponent<Image>().sprite = defaultImg;
+                    tempCnt--;
+                }
+            }
+        }
 
 
         if (GameManager.instance.boss == null)
@@ -199,6 +220,34 @@ public class InGameManager : MonoBehaviour
         StartCoroutine(YearPlay());
     }
 
+    public void WeatherWrong()
+    {
+        if (!wrongChangeOn) StartCoroutine("WeatherWrongImg");
+    }
+    IEnumerator WeatherCreateImg()
+    {
+        selectS[0].SetActive(true);
+        selectS[1].SetActive(true);
+        selectS[2].SetActive(true);
+        yield return new WaitForSeconds(createDelay);
+        select[0].GetComponent<Image>().sprite = defaultImg;
+        select[1].GetComponent<Image>().sprite = defaultImg;
+        select[2].GetComponent<Image>().sprite = defaultImg;
+        selectS[0].SetActive(false);
+        selectS[1].SetActive(false);
+        selectS[2].SetActive(false);
+        changeOn = false;
+    }
+
+    IEnumerator WeatherWrongImg()
+    {
+        wrongChangeOn = true;
+        selectS2[GameManager.instance.select.Count].SetActive(true);
+        yield return new WaitForSeconds(weatherWrongDelay);
+        selectS2[GameManager.instance.select.Count].SetActive(false);
+        wrongChangeOn = false;
+    }
+
     IEnumerator YearPlay()
     {
         StartCoroutine(SeasonPlay());
@@ -248,10 +297,17 @@ public class InGameManager : MonoBehaviour
         yield return new WaitForSeconds(7f - GameManager.instance.speed);
         // 시즌이 끝날때 보스 소환 추가 여기다가 @@@@@@@
         bossOn = true;
+        select[0].GetComponent<Image>().sprite = BossSelect[season];
+        select[1].GetComponent<Image>().sprite = BossSelect[season];
+        select[2].GetComponent<Image>().sprite = BossSelect[season];
+        bossNews.anchoredPosition = new Vector3(540 + bossNews.rect.width / 2, 0);
         SpawnManager.SpawnBossWeather();
         bossHP.SetActive(true);
         yield return new WaitForSeconds(8f);
-        if(GameManager.instance.TCount > - 50) GameManager.instance.TCount--;
+        select[0].GetComponent<Image>().sprite = defaultImg;
+        select[1].GetComponent<Image>().sprite = defaultImg;
+        select[2].GetComponent<Image>().sprite = defaultImg;
+        if (GameManager.instance.TCount > - 50) GameManager.instance.TCount--;
         PlayerPrefs.SetInt("TouchCount", GameManager.instance.TCount);
         bossOn = false;
         month++;

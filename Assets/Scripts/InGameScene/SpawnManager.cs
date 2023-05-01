@@ -110,6 +110,7 @@ public class SpawnManager : MonoBehaviour
                 }
                 if (findObj.transform.position.x < -2.7f)
                 {
+                    GameManager.Sound.Play("SFX/6_WeatherWrong");
                     GameManager.instance.select.Clear();
                     Destroy(findObj);
                     if (_findObj.weather.Count != 0)

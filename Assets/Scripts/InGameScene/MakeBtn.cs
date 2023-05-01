@@ -12,6 +12,7 @@ public class MakeBtn : MonoBehaviour
     //public Button btn4;
 
     private WeatherAndBoss n;
+    private InGameManager inGameManager;
     private Boss bossn;
 
     //각 버튼에 해당하는 날씨 1234 1234 1245 1634 해/비/구름/바람/안개/눈
@@ -54,6 +55,10 @@ public class MakeBtn : MonoBehaviour
           }
       }
     */
+    void Start()
+    {
+        inGameManager = GameObject.Find("GameManager").GetComponent<InGameManager>();
+    }
 
     //버튼이 눌렸을 때 실행될 함수
     public void Onclickbtn1()
@@ -211,6 +216,7 @@ public class MakeBtn : MonoBehaviour
             else if (!n.weather.Contains(1))
             {
                  GameManager.Sound.Play("SFX/6_WeatherWrong") ;
+                inGameManager.WeatherWrong();
                 GameManager.instance.hp--;
             } 
             else if (n.weather == null) return;
@@ -230,6 +236,7 @@ public class MakeBtn : MonoBehaviour
             }
             else if (!n.weather.Contains(2)) 
             {   GameManager.Sound.Play("SFX/6_WeatherWrong") ;
+                inGameManager.WeatherWrong();
                 GameManager.instance.hp--;
             }
             else if (n.weather == null) return;
@@ -249,7 +256,8 @@ public class MakeBtn : MonoBehaviour
             else if (!n.weather.Contains(3))
             {
                  GameManager.Sound.Play("SFX/6_WeatherWrong") ;
-                 GameManager.instance.hp--;
+                inGameManager.WeatherWrong();
+                GameManager.instance.hp--;
             } 
             else if (n.weather == null) return;
         }
@@ -266,7 +274,8 @@ public class MakeBtn : MonoBehaviour
             }
             else if (!n.weather.Contains(4))
             {       GameManager.Sound.Play("SFX/6_WeatherWrong") ;
-                   GameManager.instance.hp--;
+                inGameManager.WeatherWrong();
+                GameManager.instance.hp--;
             }
             else if (n.weather == null) return;
         }
@@ -284,7 +293,8 @@ public class MakeBtn : MonoBehaviour
             }
             else if (!n.weather.Contains(5))
             {    GameManager.Sound.Play("SFX/6_WeatherWrong") ;
-               GameManager.instance.hp--;
+                inGameManager.WeatherWrong();
+                GameManager.instance.hp--;
             }
             else if (n.weather == null) return;
         }
@@ -301,7 +311,8 @@ public class MakeBtn : MonoBehaviour
             }
             else if (!n.weather.Contains(6))
             {         GameManager.Sound.Play("SFX/6_WeatherWrong") ;
-                     GameManager.instance.hp--;
+                inGameManager.WeatherWrong();
+                GameManager.instance.hp--;
             }
             else if (n.weather == null) return;
         }
