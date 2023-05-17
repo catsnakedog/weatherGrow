@@ -58,6 +58,7 @@ public class InGameManager : MonoBehaviour
     void Start()
     {
         GameManager.instance.select.Clear();
+        GameManager.instance.q.Clear();
         GameManager.instance.bestScore = PlayerPrefs.GetInt("BestScore");
         UI_BASE = GameObject.Find("Canvas").GetComponent<UI_BASE>();
         SpawnManager = GameObject.FindWithTag("InGame").GetComponent<SpawnManager>();
@@ -300,7 +301,7 @@ public class InGameManager : MonoBehaviour
         select[0].GetComponent<Image>().sprite = BossSelect[season];
         select[1].GetComponent<Image>().sprite = BossSelect[season];
         select[2].GetComponent<Image>().sprite = BossSelect[season];
-        bossNews.anchoredPosition = new Vector3(540 + bossNews.rect.width / 2, 0);
+        bossNews.anchoredPosition = new Vector3(0, 0, 0);
         SpawnManager.SpawnBossWeather();
         bossHP.SetActive(true);
         yield return new WaitForSeconds(8f);
